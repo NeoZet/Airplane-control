@@ -5,6 +5,8 @@
 
 using namespace std;
 
+Point::Point()
+{}
 Point::Point(string _name, pair<float, float> _coord){
     name=_name;
     coord=_coord;

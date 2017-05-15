@@ -6,8 +6,10 @@
 
 using namespace std;
 
-void Route::calcDistance();
-void Route::generateVecEdge();
+void Route::calcDistance()
+{}
+void Route::generateVecEdge()
+{}
 void Route::setName(string _name)
 
 {

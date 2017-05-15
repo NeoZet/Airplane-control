@@ -1,6 +1,9 @@
-#include<iostream>
-#include"ListOfPlane.hpp"
-#include<vector>
+#include <iostream>
+#include <vector>
+#include "ListOfPlane.hpp"
+#include "Plane.hpp"
+
+using namespace std;
 
 void ListOfPlane::setPlane(vector<Plane> _vecPlane,unsigned int numb){
     vecPlane=_vecPlane;

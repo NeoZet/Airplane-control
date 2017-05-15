@@ -6,14 +6,14 @@ class Flight {
 private:
     int speed;
     int altitude;
-    pair<float, float> coord;
+    std::pair<float, float> coord;
     char typeOfCommunicate();
 
 public:
     void setSpeed();
     void setAltitude();
     void setCoord();
-    void getSpeed();
-    void getAltitude();
+    int getSpeed();
+    int getAltitude();
     std::pair<float, float> getCoord();
 };

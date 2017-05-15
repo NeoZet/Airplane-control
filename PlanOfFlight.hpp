@@ -19,7 +19,7 @@ private:
     char typeOfCommunicate;
 
 public:
-    PlanOfFlight(std::string _name, Route _route, Plane _plane, std::pair<int, int> depTime, std::string typeCom);
+    PlanOfFlight(std::string _name, Route _route, Plane _plane, std::pair<int, int> depTime, char typeCom);
     void calcFlightTime();
     std::string getName();
     std::string getRoute();

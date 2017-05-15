@@ -4,8 +4,10 @@
 
 using namespace std;
 
-void ListOfRoute::append();
-void ListOfRoute::remove();
+void ListOfRoute::append()
+{}
+void ListOfRoute::remove()
+{}
 
 void ListOfRoute::setRoute(vector<Route> _vecRoute, unsigned int numb)
 {
