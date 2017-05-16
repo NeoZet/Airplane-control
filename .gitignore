@@ -1,0 +1,9 @@
+*.[oa]
+*~
+*#
+*.txt
+*.txt.user
+*.config
+*.creator
+*.files
+*.includes
