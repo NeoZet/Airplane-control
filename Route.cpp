@@ -1,3 +1,5 @@
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,10 +8,9 @@
 
 using namespace std;
 
-void Route::calcDistance()
-{}
-void Route::generateVecEdge()
-{}
+void Route::calcDistance();
+void Route::generateVecEdge();
+
 void Route::setName(string _name)
 
 {
