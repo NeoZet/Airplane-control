@@ -30,8 +30,8 @@ void Route::calcDistance()
        delta=longitude2-longitude1;//разница долгот;
        cdelta=cos(delta);//косинус разницы;
        sdelta=sin(delta);//синус разинцы;
-       y=sqrt(pow(c2*sdelta,2)+pow(c1*s2-s1*c2*cdelta,2));
-       x=(s1*s2+c1*c2*cdelta);
+       y=sqrt(pow(c2*sdelta,2)+pow(c1*s2-s1*c2*cdelta,2));//формула;
+       x=(s1*s2+c1*c2*cdelta);//формула;
        length=atan2(y,x);
        cout<<"Расстояние в радиaнах:"<<length<<endl;
        length=length*6371;
