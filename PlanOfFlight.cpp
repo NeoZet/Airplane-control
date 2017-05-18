@@ -7,7 +7,7 @@
 
 using namespace std;
 
-PlanOfFlight::PlanOfFlight(string _name, Route _route, Plane _plane, pair<int, int> depTime, string typeCom)
+PlanOfFlight::PlanOfFlight(string _name, Route _route, Plane _plane, pair<int, int> depTime, char typeCom)
 {
     name=_name;
     route=_route;
@@ -16,7 +16,8 @@ PlanOfFlight::PlanOfFlight(string _name, Route _route, Plane _plane, pair<int, i
     typeOfCommunicate=typeCom;
 }
 
-void PlanOfFlight::calcFlightTime();
+void PlanOfFlight::calcFlightTime()
+{}
 
 string PlanOfFlight::getName()
 {

@@ -2,3 +2,10 @@
 *~
 *#
 *.txt
+<<<<<<< HEAD
+*.txt.user
+*.config
+*.creator
+*.files
+*.includes
+*.txt.user

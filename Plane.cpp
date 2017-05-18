@@ -4,7 +4,10 @@
 
 using namespace std;
 
-Plane::Plane(string _name, int _topSpeed, int _topAltitude, int _topDistance){
+Plane::Plane()
+{}
+Plane::Plane(string _name, int _topSpeed, int _topAltitude, int _topDistance)
+{
     name=_name;
     topSpeed=_topSpeed;
     topAltitude=_topAltitude;

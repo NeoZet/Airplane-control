@@ -3,11 +3,14 @@
 
 using namespace std;
 
-void Flight::setSpeed();
+void Flight::setSpeed()
+{}
 
-void Flight::setAltitude();
+void Flight::setAltitude()
+{}
 
-void Flight::setCoord();
+void Flight::setCoord()
+{}
 
 int Flight::getSpeed()
 {
