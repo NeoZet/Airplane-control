@@ -15,3 +15,26 @@ vector<Point> ListOfPoint::getVecPoint(){
 unsigned int ListOfPoint::getNumbPoint(){
     return numbOfPoint;
 }
+
+void ListOfPoint::appened() 
+{
+    Point point;
+    string str;
+    try {
+    cout << "Введите название точки:\n (В виде KXXX - если аэропорт)\n(В виде XXXXX - если точка промежуточная): ";
+    cin.ignore(1,'\n');
+    getline(cin, str);
+    for(int i=0; i<numbOfPoint; i++) {
+        if(str==vecPoint[i].getName())
+        throw 1;
+    }
+
+    vecPoint.push_back(point);
+    numbOfPoint++;
+    cout << "Друг Добавлен!"<<endl;
+    }
+    catch(int err) {
+    cout << "Ошибка! Человек уже существует!" <<endl;
+    }
+
+}

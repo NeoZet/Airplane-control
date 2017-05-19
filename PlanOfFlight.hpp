@@ -19,7 +19,8 @@ private:
     char typeOfCommunicate;
 
 public:
-    PlanOfFlight(std::string _name, Route _route, Plane _plane, std::pair<int, int> depTime, char typeCom);
+    PlanOfFlight(std::string _name, Route _route, Plane _plane, std::pair<int, int> depTime, char typeCom)
+        : name(_name), route(_route), plane(_plane), departTime(depTime), typeOfCommunicate(typeCom) {}
     void calcFlightTime();
     std::string getName();
     std::string getRoute();
@@ -31,4 +32,7 @@ public:
     std::pair<int, int> getArrivTime();
     std::pair<int, int> getFlightTime();
     char getTypeCommunicate();
+
+    friend std::ostream& operator<< (std::ostream& out, PlanOfFlight& plan);
+    friend std::istream& operator>> (std::istream& in, PlanOfFlight& plan);
 };

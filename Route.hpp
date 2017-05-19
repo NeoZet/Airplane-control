@@ -8,19 +8,23 @@
 class Route {
 private:
     std::string name;
-    std::pair<Point, Point> extrPoint;
+    int distance;
     std::vector<Point> vecInsidePoint;
     std::vector<int> edgeList;
-    int distance;
 
 public:
+    int calcLengthOfEdge(Point start, Point finish);
     void calcDistance();
     void generateVecEdge();
     void setName(std::string _name);
-    void setExtrPoint(std::pair<Point, Point> _extrPoint);
     void setInsidePoint(std::vector<Point> _vecInsidePoint);
     std::string getName();
-    std::pair<Point, Point> getExtrPoint();
     std::vector<Point> getInsidePoint();
     std::vector<int> getEdgeList();
+    int getDistance();
+
+    //friend Point loadPoint(std::string _name);
+
+    friend std::ostream& operator<< (std::ostream& out, Route& route);
+    friend std::istream& operator>> (std::istream& in, Route& route);
 };

@@ -7,15 +7,6 @@
 
 using namespace std;
 
-PlanOfFlight::PlanOfFlight(string _name, Route _route, Plane _plane, pair<int, int> depTime, char typeCom)
-{
-    name=_name;
-    route=_route;
-    plane=_plane;
-    departTime=depTime;
-    typeOfCommunicate=typeCom;
-}
-
 void PlanOfFlight::calcFlightTime()
 {}
 
