@@ -1,3 +1,5 @@
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -6,7 +8,6 @@
 #include <fstream>
 #include "Point.hpp"
 #include "Route.hpp"
-//#include "ListOfPoint.hpp"
 
 using namespace std;
 
@@ -40,17 +41,6 @@ istream& operator>> (istream& in, Route& route)
     return in;
 }
 
-
-/*Point loadPoint(string _name, vector<Point> pointList)
-{
-    for(int i=0; i<pointList.size(); i++) {
-        if(_name == pointList[i].getName()) {
-            Point point = pointList[i];
-            return point;
-        }
-    }
-}*/
-
 void Route::calcDistance()
 {
     for(int i=0; i<edgeList.size(); i++) {
@@ -66,16 +56,38 @@ void Route::generateVecEdge()
 
 int calcLengthOfEdge(Point start, Point finish)
 {
-    //Подсчёт расстояния между двумя точками, округленого до целого
+    pair<float, float> coord;
+    coord = start.getCoord();
+    float lotitude1=coord.first;
+    float longitude1=coord.second;
+    coord = finish.getCoord();
+    float lotitude2=coord.first;
+    float longitude2=coord.second;
+    lotitude1=(lotitude1*M_PI)/180;//перевод в радианы;
+    lotitude2=(lotitude2*M_PI)/180;//перевод в радианы;
+    longitude1=(longitude1*M_PI)/180;//перевод в радианы;
+    longitude2=(longitude2*M_PI)/180;//перевод в радианы;
+    float length;//длина самого расстояния
+    float c1,c2,s1,s2,delta,cdelta,sdelta,x,y;
+    s1=sin(lotitude1);//синус широты 1;
+    s2=sin(lotitude2);//синус широты 2;
+    c1=cos(lotitude1);//косинус широты 1;
+    c2=cos(lotitude2);//косинус широты 2;
+    delta=longitude2-longitude1;//разница долгот;
+    cdelta=cos(delta);//косинус разницы;
+    sdelta=sin(delta);//синус разинцы;
+    y=sqrt(pow(c2*sdelta,2)+pow(c1*s2-s1*c2*cdelta,2));//формула;
+    x=(s1*s2+c1*c2*cdelta);//формула;
+    length=atan2(y,x);
+    length *= 6371;
+    int len = static_cast<int>(ceil(100*length) / 100.0);
+    return len;
 }
 
 void Route::setName(string _name)
+
 {
     name = _name;
-}
-void Route::setExtrPoint(pair<Point, Point> _extrPoint)
-{
-    extrPoint = _extrPoint;
 }
 
 void Route::setInsidePoint(std::vector<Point> _vecInsidePoint)
@@ -88,9 +100,28 @@ string Route::getName()
     return name;
 }
 
-pair<Point, Point> Route::getExtrPoint()
+vector<Point> Route::getInsidePoint()
 {
-    return extrPoint;
+    return vecInsidePoint;
+}
+
+vector<int> Route::getEdgeList()
+{
+    return edgeList;
+}
+void Route::setName(string _name)
+{
+    name = _name;
+}
+
+void Route::setInsidePoint(std::vector<Point> _vecInsidePoint)
+{
+    vecInsidePoint = _vecInsidePoint;
+}
+
+string Route::getName()
+{
+    return name;
 }
 
 vector<Point> Route::getInsidePoint()
