@@ -1,7 +1,8 @@
 *.[oa]
 *~
 *#
-*.txt
+plan.txt
+CMakeLists.txt
 <<<<<<< HEAD
 *.txt.user
 *.config
