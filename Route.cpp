@@ -13,15 +13,14 @@ using namespace std;
 
 ostream& operator<< (ostream& out, Route& route)
 {
-    out << route.name;
-    out << route.distance;
+    out << route.name << endl;
+    out << route.distance << endl;
     int num = route.vecInsidePoint.size();
-    out << num;
+    out << num << endl;
     for(int i = 0; i<num; i++) {
-        out << route.vecInsidePoint[i] << endl;
+        out << route.vecInsidePoint[i]<<endl;
     }
     copy(route.edgeList.begin(), route.edgeList.end(), ostream_iterator<int>(out, " "));
-    out << endl;
     return out;
 }
 
@@ -31,30 +30,36 @@ istream& operator>> (istream& in, Route& route)
     in >> route.distance;
     int num;
     in >> num;
+    Point p;
     for(int i=0; i<num; i++) {
-        in >> route.vecInsidePoint[i];
+        in >> p;
+        route.vecInsidePoint.push_back(p);
         route.vecInsidePoint[i].defineSpecifier();
     }
-    for(int i=1; i<route.vecInsidePoint.size()-1; i++) {
-        in >> route.edgeList[i];
+    int ed;
+    for(unsigned int i=0; i<route.vecInsidePoint.size()-1; i++) {
+        in >> ed;
+        route.edgeList.push_back(ed);
     }
     return in;
 }
 
 void Route::calcDistance()
 {
-    for(int i=0; i<edgeList.size(); i++) {
+    for(unsigned int i=0; i<edgeList.size(); i++) {
         distance+=edgeList[i];
     }
 }
 void Route::generateVecEdge()
 {
-    for(int i=0; i<vecInsidePoint.size()-1; i++) {
-        edgeList.push_back(calcLengthOfEdge(vecInsidePoint[i], vecInsidePoint[i+1]));
+    vector<int>::iterator it = edgeList.begin();
+    for(unsigned int i=0; i<vecInsidePoint.size()-1; i++) {
+        //edgeList.push_back(calcLengthOfEdge(vecInsidePoint[i], vecInsidePoint[i+1]));
+        edgeList[i]=(calcLengthOfEdge(vecInsidePoint[i], vecInsidePoint[i+1]));
     }
 }
 
-int calcLengthOfEdge(Point start, Point finish)
+int Route::calcLengthOfEdge(Point start, Point finish)
 {
     pair<float, float> coord;
     coord = start.getCoord();
@@ -86,30 +91,6 @@ int calcLengthOfEdge(Point start, Point finish)
 
 void Route::setName(string _name)
 
-{
-    name = _name;
-}
-
-void Route::setInsidePoint(std::vector<Point> _vecInsidePoint)
-{
-    vecInsidePoint = _vecInsidePoint;
-}
-
-string Route::getName()
-{
-    return name;
-}
-
-vector<Point> Route::getInsidePoint()
-{
-    return vecInsidePoint;
-}
-
-vector<int> Route::getEdgeList()
-{
-    return edgeList;
-}
-void Route::setName(string _name)
 {
     name = _name;
 }

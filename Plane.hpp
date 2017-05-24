@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <fstream>
 
 class Plane{
 private:
@@ -13,10 +14,10 @@ public:
     Plane(std::string _name,int _topSpeed,int _topAltitude,int _topDistance)
         : name(_name), topSpeed(_topSpeed), topAltitude(_topAltitude), topDistance(_topDistance) {}
     std::string getName();
-    int getCruiseSpeed();
     int getTopAltitude();
+    int getTopSpeed();
     int getTopDistance();
 
     friend std::ostream& operator<< (std::ostream& out, Plane& plane);
-    friend std::istream& operator<< (std::istream& in, Plane& plane);
+    friend std::istream& operator>> (std::istream& in, Plane& plane);
 };
