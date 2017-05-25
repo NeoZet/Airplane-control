@@ -20,6 +20,9 @@ public:
     std::pair<float, float> getCoord();
     std::pair<int, int> getTime();
 
+    Flight operator = (const Flight &flight);
+
     friend std::ostream& operator<< (std::ostream& out, Flight& flight);
     friend std::istream& operator>> (std::istream& in, Flight& flight);
+
 };

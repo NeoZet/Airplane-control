@@ -1,17 +1,18 @@
 #include <utility>
+#include <fstream>
 #include "Flight.hpp"
 
 using namespace std;
 
 ostream& operator<< (ostream& out, Flight& flight)
 {
-/*    out << flight.speed << endl;
+    out << flight.speed << endl;
     out << flight.altitude << endl;
     out << flight.coord.first << " ";
     out << flight.coord.second << endl;
     out << flight.time.first<<" ";
     out << flight.time.second;
-    return out;*/
+    return out;
 }
 
 istream& operator>> (istream& in, Flight& flight)
@@ -23,6 +24,16 @@ istream& operator>> (istream& in, Flight& flight)
     in >> flight.time.first;
     in >> flight.time.second;
     return in;
+}
+
+Flight Flight::operator = (const Flight &flight)
+{
+    if (&flight == this)
+        return *this;
+    (this->speed = flight.speed,
+                  this->altitude = flight.altitude,
+                  this->coord = flight.coord,
+                  this->time = flight.time);
 }
 
 /*void Flight::setSpeed()

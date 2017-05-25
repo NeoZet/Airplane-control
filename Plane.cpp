@@ -23,8 +23,25 @@ istream& operator>> (istream& in, Plane& plane)
     return in;
 }
 
+Plane Plane::operator = (const Plane &plane)
+{
+    if (&plane == this)
+        return *this;
+    (this->name = plane.name,
+                  this->topSpeed = plane.topSpeed,
+                  this->topAltitude = plane.topAltitude,
+                  this->topDistance = plane.topDistance);
+}
+
+
 Plane::Plane()
 {}
+
+void Plane::setName(string _name)
+{
+    name = _name;
+}
+
 string Plane::getName(){
     return name;
 }

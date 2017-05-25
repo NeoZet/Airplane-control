@@ -1,26 +1,81 @@
 #include <iostream>
 #include <fstream>
 #include <iterator>
-#include "Route.hpp"
 #include "Point.hpp"
+#include "ListOfPoint.hpp"
+#include "Route.hpp"
+#include "ListOfRoute.hpp"
 #include "Plane.hpp"
 #include "ListOfPlane.hpp"
 #include "Flight.hpp"
+#include "PlanOfFlight.hpp"
+#include "Dispatcher.hpp"
 
 using namespace std;
 
 int main()
 {
+    ifstream in("listPlane.txt");
+    ListOfPlane pl;
+    Plane p;
+    vector<Plane> listPl;
+    int qty=0;
+    while(in >> p) {
+        if(in.eof()) break;
+        listPl.push_back(p);
+        qty++;
+    }
+    pl.setPlane(listPl, listPl.size());
+    in.close();
+
+    in.open("listRoute.txt");
+    ListOfRoute rt;
+    Route r;
+    vector<Route> listRt;
+    qty=0;
+    while(in >> r) {
+        if(in.eof()) break;
+        listRt.push_back(r);
+        qty++;
+    }
+    rt.setRoute(listRt, listRt.size());
+    in.close();
+
+
+    in.open("listFlightPlan.txt");
+    PlanOfFlight plan;
+    in >> plan;
+    plan.loadPlane(pl.getPlane());
+    plan.loadRoute(rt.getRoute());
+    //cout << plan << endl;
+    in.close();
+
+    in.open("flight.txt");
+    Dispatcher disp(plan);
+    Flight flight;
+    while(in >> flight) {
+        if(in.eof()) break;
+        disp.setFlight(flight);
+        disp.correctFlight();
+    }
+    //Route route = plan.getRoute();
+    vector<Point> vecPoint = plan.getRoute().getInsidePoint();
+    cout << "Маршрут: " << plan.getRoute().getName()<<endl;
+    for(unsigned int i=0; i<vecPoint.size(); i++) {
+        cout << vecPoint[i].getName()<<" ";
+    }
+
+    /*
     ifstream in("listRoute.txt");
     Route r;
     in >> r;
     r.generateVecEdge();
     r.calcDistance();
     cout << r <<endl;
+*/
 
-
-
-    /* Flight fl;
+/*
+     Flight fl;
     vector<Flight> listFl;
     int qty=0;
     while(in >> fl) {
@@ -31,6 +86,17 @@ int main()
     for(unsigned int i = 0; i<listFl.size(); i++)
         cout << listFl[i] << endl;
 */
+
+   /*
+    ifstream in("flight.txt");
+    Flight fl, lf;
+    vector<Flight> listFl;
+    int qty=0;
+    in >> fl;
+    in >> lf;
+    fl = lf;
+    cout << fl << endl << endl << lf << endl;
+
 
 
     /*Plane r;
