@@ -10,12 +10,20 @@
 #include "Flight.hpp"
 #include "PlanOfFlight.hpp"
 #include "Dispatcher.hpp"
-
+#include "Base.hpp"
 using namespace std;
 
 int main()
 {
-    ifstream in("listPlane.txt");
+    ListOfPlane p;
+    ListOfPlane &pl=p;
+    ListOfPoint poi;
+    ListOfPoint &point=poi;
+    ListOfRoute r;
+    ListOfRoute &rt=r;
+    Base base;
+    base.LoadData(pl,rt,point);
+    /*ifstream in("listPlane.txt");
     ListOfPlane pl;
     Plane p;
     vector<Plane> listPl;
@@ -63,7 +71,7 @@ int main()
     cout << "Маршрут: " << plan.getRoute().getName()<<endl;
     for(unsigned int i=0; i<vecPoint.size(); i++) {
         cout << vecPoint[i].getName()<<" ";
-    }
+    }*/
 
     /*
     ifstream in("listRoute.txt");
