@@ -23,102 +23,50 @@ int main()
     ListOfRoute &rt=r;
     Base base;
     base.LoadData(pl,rt,point);
-    /*ifstream in("listPlane.txt");
-    ListOfPlane pl;
-    Plane p;
-    vector<Plane> listPl;
-    int qty=0;
-    while(in >> p) {
-        if(in.eof()) break;
-        listPl.push_back(p);
-        qty++;
+    Plane plane;
+    Route route;
+    Point point1;
+    vector<Route> vecR=rt.getRoute();
+    vector<Plane> vecPl=pl.getPlane();
+    vector<Point> vecPoi=point.getVecPoint();
+    unsigned int i;
+    for( ; ; ){
+    cout<<"1.Список саолётов,маршрутов,точек\n2.Добавить самолёт и точку\n3.Сохранить данные\n";
+    cin>>i;
+    switch (i) {
+    case 1:
+        cout<<"Route\n"<<endl;
+         for(i=0;i<vecR.size();i++)
+             cout<<vecR[i]<<endl<<endl;
+         cout<<endl;
+         cout<<"Plane\n"<<endl;
+         for(i=0;i<vecPl.size();i++)
+             cout<<vecPl[i]<<endl;
+         cout<<endl;
+         cout<<"Point\n"<<endl;
+         for(i=0;i<vecPoi.size();i++)
+             cout<<vecPoi[i]<<endl;
+         cout<<endl;
+        break;
+     case 2:
+        cout<<"Plane"<<endl;
+        cin>>plane;
+        vecPl.push_back(plane);
+        cout<<"Point"<<endl;
+        cin>>point1;
+        vecPoi.push_back(point1);
+        pl.setPlane(vecPl,vecPl.size());
+        point.setVecPoint(vecPoi,vecPoi.size());
+        /*cout<<"Route"<<endl;
+        cin>>route;
+        vecR.push_back(route);
+        rt.setRoute(vecR,vecR.size());
+        break;*/
+     case 3:base.SaveData(pl,rt,point);
+    default:
+        break;
     }
-    pl.setPlane(listPl, listPl.size());
-    in.close();
-
-    in.open("listRoute.txt");
-    ListOfRoute rt;
-    Route r;
-    vector<Route> listRt;
-    qty=0;
-    while(in >> r) {
-        if(in.eof()) break;
-        listRt.push_back(r);
-        qty++;
-    }
-    rt.setRoute(listRt, listRt.size());
-    in.close();
-
-
-    in.open("listFlightPlan.txt");
-    PlanOfFlight plan;
-    in >> plan;
-    plan.loadPlane(pl.getPlane());
-    plan.loadRoute(rt.getRoute());
-    //cout << plan << endl;
-    in.close();
-
-    in.open("flight.txt");
-    Dispatcher disp(plan);
-    Flight flight;
-    while(in >> flight) {
-        if(in.eof()) break;
-        disp.setFlight(flight);
-        disp.correctFlight();
-    }
-    //Route route = plan.getRoute();
-    vector<Point> vecPoint = plan.getRoute().getInsidePoint();
-    cout << "Маршрут: " << plan.getRoute().getName()<<endl;
-    for(unsigned int i=0; i<vecPoint.size(); i++) {
-        cout << vecPoint[i].getName()<<" ";
-    }*/
-
-    /*
-    ifstream in("listRoute.txt");
-    Route r;
-    in >> r;
-    r.generateVecEdge();
-    r.calcDistance();
-    cout << r <<endl;
-*/
-
-/*
-     Flight fl;
-    vector<Flight> listFl;
-    int qty=0;
-    while(in >> fl) {
-        if(in.eof()) break;
-        listFl.push_back(fl);
-        qty++;
-    }
-    for(unsigned int i = 0; i<listFl.size(); i++)
-        cout << listFl[i] << endl;
-*/
-
-   /*
-    ifstream in("flight.txt");
-    Flight fl, lf;
-    vector<Flight> listFl;
-    int qty=0;
-    in >> fl;
-    in >> lf;
-    fl = lf;
-    cout << fl << endl << endl << lf << endl;
-
-
-
-    /*Plane r;
-
-    ListOfPlane p;
-    int len=0;
-    vector<Plane> _listPlane;
-    while(in >> r) {
-        if(in.eof()) break;
-        _listPlane.push_back(r);
-        len++;
-    }
-    p.setPlane(_listPlane, len);
-    for(unsigned int i = 0; i<p.getPlane().size(); i++)
-        cout << p.getPlane()[i] << endl;
-*/
+    if(i==0)
+        break;
+   }
 }

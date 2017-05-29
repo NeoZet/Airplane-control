@@ -51,24 +51,27 @@ void Base::LoadData(ListOfPlane &pl, ListOfRoute &rt, ListOfPoint &point)
     in.close();
 }
 
-/*void Base::SaveData(ListOfPlane &pl, ListOfRoute &rt, ListOfPoint &point)
+void Base::SaveData(ListOfPlane &pl, ListOfRoute &rt, ListOfPoint &point)
 {
    int i;
    ofstream out("listPlane.txt");
+   vector<Plane> vecPl=pl.getPlane();
    for(i=0;i<pl.getNumbPlane();i++)
-       cout<<pl.getPlane()<<endl;
+       out<<vecPl[i]<<endl;
    out.close();
 
    out.open("listRoute.txt");
+   vector<Route> vecRt=rt.getRoute();
    for(i=0;i<rt.getNumbRoute();i++)
-      cout<<rt.getRoute()<<endl;
+      out<<vecRt[i]<<endl;
    out.close();
 
    out.open("listPoint.txt");
+   vector<Point> vecPoi=point.getVecPoint();
    for(i=0;i<point.getNumbPoint();i++)
-       cout<<point.getVecPoint()<<endl;
+       out<<vecPoi[i]<<endl;
    out.close();
-}*/
+}
 
 PlanOfFlight Base::makePlanOfFlight(vector<Route> vecRt,vector<Plane> vecPlane)
 {
