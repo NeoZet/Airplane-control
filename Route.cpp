@@ -46,6 +46,7 @@ istream& operator>> (istream& in, Route& route)
 
 void Route::calcDistance()
 {
+    distance = 0;
     for(unsigned int i=0; i<edgeList.size(); i++) {
         distance+=edgeList[i];
     }

@@ -10,15 +10,15 @@ using namespace std;
 ostream& operator<< (ostream& out, PlanOfFlight& plan)
 {
     out << plan.name << endl;
-    out << plan.route<< endl;
-    out << plan.plane<< endl;
+    out << plan.route.getName()<< endl;
+    out << plan.plane.getName()<< endl;
     out << plan.recommendSpeed<< endl;
     out << plan.recommendAltitude<< endl;
-    out << plan.departTime.first<< ":";
+    out << plan.departTime.first<< " ";
     out << plan.departTime.second<< endl;
-    out << plan.arriveTime.first<<":";
+    out << plan.arriveTime.first<<" ";
     out << plan.arriveTime.second<<endl;
-    out << plan.flightTime.first <<":"<<plan.flightTime.second;
+    out << plan.flightTime.first <<" "<<plan.flightTime.second;
     return out;
 }
 
@@ -37,25 +37,10 @@ istream& operator>> (istream& in, PlanOfFlight& plan)
     in >> plan.departTime.second;
     in >> plan.arriveTime.first;
     in >> plan.arriveTime.second;
-    plan.calcFlightTime();
+    in >> plan.flightTime.first;
+    in >> plan.flightTime.second;
     return in;
 }
-
-/*PlanOfFlight PlanOfFlight::operator = (const PlanOfFlight &plan)
-{
-    if (&plan == this)
-        return *this;
-    //(this->name = plan.name
-            //this->route = plan.route,
-           // this->plane = plan.plane,
-            //this->recommendSpeed = plan.recommendSpeed,
-            //this->recommendAltitude = plan.recommendAltitude,
-            //this->departTime = plan.departTime,
-            //this->arriveTime = plan.arriveTime,
-            //this->flightTime = plan.flightTime);
-}
-*/
-
 
 void PlanOfFlight::loadRoute(vector<Route> vecRt)
 {
@@ -73,6 +58,17 @@ void PlanOfFlight::loadPlane(vector<Plane> vecPln)
             plane = vecPln[i];
         }
     }
+}
+
+void PlanOfFlight::calcArriveTime()
+{
+    float speed = static_cast<float>(recommendSpeed);
+    speed /= 60;
+    int time = route.getDistance()/speed;
+    int as = time/60;
+    int bs = time - as*60;
+    arriveTime.first = departTime.first+as;
+    arriveTime.second = departTime.second+bs;
 }
 
 
@@ -120,11 +116,6 @@ int PlanOfFlight::getRecAlt()
 {
     return recommendAltitude;
 }
-
-/*int PlanOfFlight::getDistance()
-{
-    return flightDistance;
-}*/
 
 pair<int, int> PlanOfFlight::getDepartTime()
 {

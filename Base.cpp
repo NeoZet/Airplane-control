@@ -48,5 +48,6 @@ PlanOfFlight Base::makePlanOfFlight(vector<Route> vecRt,vector<Plane> vecPlane)
     cin>>typeOfCommunicate;
 
    PlanOfFlight plan1(title,rt,plane,departTime,typeOfCommunicate);
+   plan1.calcFlightTime();
    return plan1;
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iterator>
+#include <unistd.h>
 #include "Point.hpp"
 #include "ListOfPoint.hpp"
 #include "Route.hpp"
@@ -10,11 +11,13 @@
 #include "Flight.hpp"
 #include "PlanOfFlight.hpp"
 #include "Dispatcher.hpp"
+#include "Base.hpp"
 
 using namespace std;
 
 int main()
 {
+
     ifstream in("listPlane.txt");
     ListOfPlane pl;
     Plane p;
@@ -47,23 +50,42 @@ int main()
     in >> plan;
     plan.loadPlane(pl.getPlane());
     plan.loadRoute(rt.getRoute());
-    //cout << plan << endl;
+    plan.calcArriveTime();
+    plan.calcFlightTime();
+    /*ofstream out("listFlightPlan.txt");
+    out << plan << endl;*/
+    plan.distance = r.getDistance();
     in.close();
 
     in.open("flight.txt");
     Dispatcher disp(plan);
     Flight flight;
+    int *averSpeed;
+    int d = r.getDistance();
+    int *dist = &d;
+    int aSpeed=0;
+    qty=0;
+    int allSpeed=0;
     while(in >> flight) {
         if(in.eof()) break;
-        disp.setFlight(flight);
-        disp.correctFlight();
+        qty++;
+        allSpeed+=flight.getSpeed();
+        aSpeed = (allSpeed/qty);
+        averSpeed = &aSpeed;
+        disp.setFlight(flight);       
+        disp.correctFlight(dist, averSpeed);
+        usleep(500000);
     }
-    //Route route = plan.getRoute();
+    cout << "Посадка...";
+    cout << endl;
     vector<Point> vecPoint = plan.getRoute().getInsidePoint();
     cout << "Маршрут: " << plan.getRoute().getName()<<endl;
     for(unsigned int i=0; i<vecPoint.size(); i++) {
         cout << vecPoint[i].getName()<<" ";
     }
+    cout << endl;
+    
+////////////////////////*/
 
     /*
     ifstream in("listRoute.txt");
