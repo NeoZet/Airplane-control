@@ -22,6 +22,7 @@ public:
     PlanOfFlight() {}
     PlanOfFlight(std::string _name, Route _route, Plane _plane, std::pair<int, int> depTime, char typeCom)
         : name(_name), route(_route), plane(_plane), departTime(depTime), typeOfCommunicate(typeCom) {}
+    void calcArriveTime();
     void calcFlightTime();
     void loadRoute(std::vector<Route> vecRt);
     void loadPlane(std::vector<Plane> vecPln);

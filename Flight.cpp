@@ -6,23 +6,23 @@ using namespace std;
 
 ostream& operator<< (ostream& out, Flight& flight)
 {
-    out << flight.speed << endl;
-    out << flight.altitude << endl;
-    out << flight.coord.first << " ";
-    out << flight.coord.second << endl;
     out << flight.time.first<<" ";
-    out << flight.time.second;
+    out << flight.time.second<<" ";
+    out << flight.coord.first << " ";
+    out << flight.coord.second << " ";
+    out << flight.speed << " ";
+    out << flight.altitude << " ";
     return out;
 }
 
 istream& operator>> (istream& in, Flight& flight)
 {
-    in >> flight.speed;
-    in >> flight.altitude;
-    in >> flight.coord.first;
-    in >> flight.coord.second;
     in >> flight.time.first;
     in >> flight.time.second;
+    in >> flight.coord.first;
+    in >> flight.coord.second;
+    in >> flight.speed;
+    in >> flight.altitude;
     return in;
 }
 
@@ -36,14 +36,25 @@ Flight Flight::operator = (const Flight &flight)
                   this->time = flight.time);
 }
 
-/*void Flight::setSpeed()
-{}
+void Flight::setSpeed(int _speed)
+{
+    speed = _speed;
+}
 
-void Flight::setAltitude()
-{}
+void Flight::setAltitude(int _altitude)
+{
+    altitude = _altitude;
+}
 
-void Flight::setCoord()
-{}*/
+void Flight::setCoord(pair<float, float> _coord)
+{
+    coord = _coord;
+}
+
+void Flight::setTime(pair<int, int> _time)
+{
+    time = _time;
+}
 
 int Flight::getSpeed()
 {

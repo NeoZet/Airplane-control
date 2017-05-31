@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <utility>
 #include "Flight.hpp"
 #include "PlanOfFlight.hpp"
 
@@ -12,6 +13,8 @@ private:
 public:
     Dispatcher(PlanOfFlight _plan) : plan(_plan) {}
     void setFlight(Flight _flight);
-    void correctFlight();
-   // void setPlanOfFlight(PlanOfFlight _plan);
+    void correctFlight(int *dist, int *averSpeed);
+    std::pair<int, int> recalcFlightTime(int *averSpeed);
+    void recalcDistance(int *dist);
+    std::string findLocateOnMap();
 };
