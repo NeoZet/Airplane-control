@@ -10,4 +10,5 @@ public:
     void LoadData(ListOfPlane &pl,ListOfRoute &rt,ListOfPoint &point);
     void SaveData(ListOfPlane &pl,ListOfRoute &rt,ListOfPoint &point);
     PlanOfFlight makePlanOfFlight(std::vector <Route> vecRt,std::vector <Plane> vecPlane);
+    int run();
 };

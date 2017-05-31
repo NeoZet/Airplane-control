@@ -15,6 +15,6 @@ public:
     void setFlight(Flight _flight);
     void correctFlight(int *dist, int *averSpeed);
     std::pair<int, int> recalcFlightTime(int *averSpeed);
-    int *recalcDistance(int *dist);
+    void recalcDistance(int *dist);
     std::string findLocateOnMap();
 };

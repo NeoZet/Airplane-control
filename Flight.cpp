@@ -36,14 +36,25 @@ Flight Flight::operator = (const Flight &flight)
                   this->time = flight.time);
 }
 
-/*void Flight::setSpeed()
-{}
+void Flight::setSpeed(int _speed)
+{
+    speed = _speed;
+}
 
-void Flight::setAltitude()
-{}
+void Flight::setAltitude(int _altitude)
+{
+    altitude = _altitude;
+}
 
-void Flight::setCoord()
-{}*/
+void Flight::setCoord(pair<float, float> _coord)
+{
+    coord = _coord;
+}
+
+void Flight::setTime(pair<int, int> _time)
+{
+    time = _time;
+}
 
 int Flight::getSpeed()
 {

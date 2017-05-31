@@ -32,7 +32,6 @@ public:
     int getRecSpeed();
     int getRecAlt();
    // int getDistance();
-    int distance;
     std::pair<int, int> getDepartTime();
     std::pair<int, int> getArrivTime();
     std::pair<int, int> getFlightTime();
