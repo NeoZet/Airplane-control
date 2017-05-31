@@ -27,9 +27,12 @@ public:
 	*/
     Point(std::string _name, std::pair<float,float> _coord)
        : name(_name), coord(_coord) {}
+<<<<<<< HEAD
 	/*!
 		Метод,определяющий спецификацию точки
 	*/
+=======
+>>>>>>> 5bc9299c59e71dcf57e8f2ca293447372608c7a9
    void defineSpecifier();
 	/*!
 		Метод,предназначенный для инициализации названия точки 
@@ -41,10 +44,13 @@ public:
 		\param [in] _coord
 	*/
    void setCoord(std::pair<float, float> _coord);
+<<<<<<< HEAD
 	/*!
 		Метод,возвращающий название точки
 		\return name
 	*/
+=======
+>>>>>>> 5bc9299c59e71dcf57e8f2ca293447372608c7a9
    std::string getName();
 	/*!
 		Метод,возвращающий координаты
