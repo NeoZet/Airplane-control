@@ -8,10 +8,16 @@
   Класс,предназначенный для хранения списка маршрутов. Содержит -get и -set методы,
   а также методы добавления и удалнения маршрутов
 */
+<<<<<<< HEAD
 =======
 #include "Point.hpp"
 
 >>>>>>> 5bc9299c59e71dcf57e8f2ca293447372608c7a9
+=======
+
+#include "Point.hpp"
+
+>>>>>>> new
 class ListOfRoute {
 private:
 	  //!Вектор маршрутов
@@ -19,7 +25,7 @@ private:
 	  //!Количество маршрутов
       unsigned int numbOfRoute;
 public:
-<<<<<<< HEAD
+
 	  /*!
 		Метод,предназначенный для добавления маршрутов
 	  */
@@ -28,17 +34,20 @@ public:
 		Метод,предназначенный для удаления маршрутов
 	  */
       void remove();
+	  /*!
+		Метод,предназначенный для загрузки точек маршрута
+		\param [in] vecInsPt вектор точек,из которых состоит маршрут
+		\param [out] vecAllPoint вектор всех точек
+		\return vecInsPt
+	  */ 
+      std::vector<Point> loadInsPoint(std::vector<Point> vecInsPt, std::vector<Point> vecAllPoint);
 	   /*!
 		Метод,предназначенный для инициализации вектора и количества маршрутов
 		\param [in] _vecRoute вектор маршрутов
 		\param [in] numb количество маршрутов
 	  */
-=======
-      void append(std::vector<Point> vecAllPoint);
-      void remove();
-      std::vector<Point> loadInsPoint(std::vector<Point> vecInsPt, std::vector<Point> vecAllPoint);
->>>>>>> 5bc9299c59e71dcf57e8f2ca293447372608c7a9
-      void setRoute(std::vector<Route> _vecRoute, unsigned int numb);
+
+       void setRoute(std::vector<Route> _vecRoute, unsigned int numb);
 	   /*!
 			Метод,возвращающий вектор маршрутов
 			\return vecRoute
