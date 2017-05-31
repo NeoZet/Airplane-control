@@ -2,22 +2,15 @@
 
 #include <vector>
 #include "Route.hpp"
-<<<<<<< HEAD
+
 /*!
   @class ListOfRoute
   Класс,предназначенный для хранения списка маршрутов. Содержит -get и -set методы,
   а также методы добавления и удалнения маршрутов
 */
-<<<<<<< HEAD
-=======
-#include "Point.hpp"
 
->>>>>>> 5bc9299c59e71dcf57e8f2ca293447372608c7a9
-=======
 
 #include "Point.hpp"
-
->>>>>>> new
 class ListOfRoute {
 private:
 	  //!Вектор маршрутов
