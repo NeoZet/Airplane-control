@@ -12,12 +12,15 @@
 #include "PlanOfFlight.hpp"
 #include "Dispatcher.hpp"
 #include "Base.hpp"
+#include <sstream>
 
 using namespace std;
 
 int main()
 {
-
+    Base base;
+    base.run();
+    /*////////////////
     ifstream in("listPlane.txt");
     ListOfPlane pl;
     Plane p;
@@ -52,12 +55,12 @@ int main()
     plan.loadRoute(rt.getRoute());
     plan.calcArriveTime();
     plan.calcFlightTime();
-    /*ofstream out("listFlightPlan.txt");
-    out << plan << endl;*/
+    ofstream out("listFlightPlan.txt");
+    out << plan << endl;
     plan.distance = r.getDistance();
     in.close();
 
-    in.open("flight.txt");
+    in.open("KBOS-KORD.log");
     Dispatcher disp(plan);
     Flight flight;
     int *averSpeed;
@@ -84,7 +87,7 @@ int main()
         cout << vecPoint[i].getName()<<" ";
     }
     cout << endl;
-    
+   */
 ////////////////////////*/
 
     /*

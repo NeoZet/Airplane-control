@@ -5,4 +5,5 @@
 class Base{
 public:
     PlanOfFlight makePlanOfFlight(std::vector <Route> vecRt,std::vector <Plane> vecPlane);
+    int run();
 };

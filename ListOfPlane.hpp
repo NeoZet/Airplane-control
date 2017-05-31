@@ -9,7 +9,7 @@ private:
     std::vector<Plane> vecPlane;
     unsigned int numbOfPlane;
 public:
-    void appened();
+    void append();
     void remove();
     void setPlane(std::vector<Plane> _vecPlane, unsigned int numb);
     std::vector<Plane> getPlane();

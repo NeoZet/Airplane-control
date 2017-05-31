@@ -12,9 +12,10 @@ private:
     char typeOfCommunicate();
 
 public:
-   /* void setSpeed();
-    void setAltitude();
-    void setCoord();*/
+    void setSpeed(int _speed);
+    void setAltitude(int _altitude);
+    void setCoord(std::pair<float, float> _coord);
+    void setTime(std::pair<int, int> _time);
     int getSpeed();
     int getAltitude();
     std::pair<float, float> getCoord();
