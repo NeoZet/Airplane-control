@@ -263,16 +263,13 @@ int Base::run()
         rt.append(listPt);
         break;
     case 3:
-        /*pl.append();
-        cout << pl.getPlane()[2]<<endl;
-        pl.remove();
-        cout << pl.getNumbPlane()<<endl;
-        break;*/
+        pl.append();
+        break;
     case 4:
         rt.remove();
         break;
     case 5:
-        //pl.remove();
+        pl.remove();
         break;
     case 0:
         return 0;
