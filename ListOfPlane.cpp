@@ -16,20 +16,21 @@ vector<Plane> ListOfPlane::getPlane(){
 unsigned int ListOfPlane::getNumbPlane(){
     return numbOfPlane;
 }
-void ListOfPlane::appened(){
+void ListOfPlane::append(){
     string name_plane;
     int topSpeed,topAltitude,topDistance;
     cout<<"Введите название самолёта:";
     cin.ignore(1,'\n');
     getline(cin,name_plane);
-    cout<<endl<<"Введите максимальную скорость:";
+    cout<<"Введите максимальную скорость:";
     cin>>topSpeed;
-    cout<<endl<<"Введите максимальную высоту полёта:";
+    cout<<"Введите максимальную высоту полёта:";
     cin>>topAltitude;
-    cout<<endl<<"Введите максимальную дальность полёта:";
+    cout<<"Введите максимальную дальность полёта:";
     cin>>topDistance;
     Plane plane(name_plane,topSpeed,topAltitude,topDistance);
     vecPlane.push_back(plane);
+    numbOfPlane++;
 }
 void ListOfPlane::remove(){
     cout<<"Введите название самолёта:";
@@ -45,7 +46,8 @@ void ListOfPlane::remove(){
     }
     if(flag==1){
         vecPlane.erase(vecPlane.begin()+n);
-        cout<<endl<<"Самолёт удалён"<<endl;
+        cout<<"Самолёт удалён"<<endl;
+        numbOfPlane--;
     }
     else
         cout<<"Самолёт не найден"<<endl;
