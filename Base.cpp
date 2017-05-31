@@ -147,6 +147,19 @@ int Base::run()
     pl.setPlane(listPl, listPl.size());
     in.close();
 
+    in.open("listPoint.txt");
+    ListOfPoint poi;
+    Point point;
+    vector<Point> listPt;
+    qty=0;
+    while(in >> point) {
+        if(in.eof()) break;
+        listPt.push_back(point);
+        qty++;
+    }
+    poi.setVecPoint(listPt, listPt.size());
+    in.close();
+
     in.open("listRoute.txt");
     ListOfRoute rt;
     Route r;
@@ -244,6 +257,25 @@ int Base::run()
             cout << vecPoint[i].getName()<<" ";
         }
         cout << endl;
+        break;
     }
+    case 2:
+        rt.append(listPt);
+        break;
+    case 3:
+        /*pl.append();
+        cout << pl.getPlane()[2]<<endl;
+        pl.remove();
+        cout << pl.getNumbPlane()<<endl;
+        break;*/
+    case 4:
+        rt.remove();
+        break;
+    case 5:
+        //pl.remove();
+        break;
+    case 0:
+        return 0;
     }
+
 }

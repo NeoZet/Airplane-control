@@ -55,7 +55,7 @@ void Route::generateVecEdge()
 {
     vector<int>::iterator it = edgeList.begin();
     for(unsigned int i=0; i<vecInsidePoint.size()-1; i++) {
-        //edgeList.push_back(calcLengthOfEdge(vecInsidePoint[i], vecInsidePoint[i+1]));
+        edgeList.push_back(0);
         edgeList[i]=(calcLengthOfEdge(vecInsidePoint[i], vecInsidePoint[i+1]));
     }
 }
