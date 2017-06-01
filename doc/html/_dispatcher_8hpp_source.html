@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Airplane control: Исходный файл Dispatcher.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Airplane control
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Dispatcher.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_dispatcher_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_flight_8hpp.html">Flight.hpp</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_plan_of_flight_8hpp.html">PlanOfFlight.hpp</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_dispatcher.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dispatcher.html">Dispatcher</a>{</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_dispatcher.html#aa0667608304c6859a6dea2f16d8b56e7">   18</a></span>&#160;    std::string <a class="code" href="class_dispatcher.html#aa0667608304c6859a6dea2f16d8b56e7">name</a>;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_dispatcher.html#acd061344a58a854e72c08712e9ef8b7e">   20</a></span>&#160;    <a class="code" href="class_plan_of_flight.html">PlanOfFlight</a> <a class="code" href="class_dispatcher.html#acd061344a58a854e72c08712e9ef8b7e">plan</a>;</div><div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_dispatcher.html#a8bc2b0350eb8323fc04d1af3c0c61585">   22</a></span>&#160;    <a class="code" href="class_flight.html">Flight</a> <a class="code" href="class_dispatcher.html#a8bc2b0350eb8323fc04d1af3c0c61585">flight</a>;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_dispatcher.html#ad71822672a921992d4f692290f04256e">   28</a></span>&#160;    <a class="code" href="class_dispatcher.html#ad71822672a921992d4f692290f04256e">Dispatcher</a>(<a class="code" href="class_plan_of_flight.html">PlanOfFlight</a> _plan) : plan(_plan) {}</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_dispatcher.html#a68ff23b5fc803c57bf77edee96ff1cba">setFlight</a>(<a class="code" href="class_flight.html">Flight</a> _flight);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_dispatcher.html#a9d216113c779acef564d31da797cdaae">correctFlight</a>(<span class="keywordtype">int</span> *dist, <span class="keywordtype">int</span> *averSpeed);*/</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::pair&lt;int, int&gt; <a class="code" href="class_dispatcher.html#a7634fa3cbe643d23e029add4319df59d">recalcFlightTime</a>(<span class="keywordtype">int</span> *averSpeed);</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_dispatcher.html#ae676aefe97ae29d1437a7d83cb926492">recalcDistance</a>(<span class="keywordtype">int</span> *dist);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::string <a class="code" href="class_dispatcher.html#a9b524370974d61389e698f7b0a21473f">findLocateOnMap</a>();</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div><div class="ttc" id="_plan_of_flight_8hpp_html"><div class="ttname"><a href="_plan_of_flight_8hpp.html">PlanOfFlight.hpp</a></div></div>
+<div class="ttc" id="class_dispatcher_html_a68ff23b5fc803c57bf77edee96ff1cba"><div class="ttname"><a href="class_dispatcher.html#a68ff23b5fc803c57bf77edee96ff1cba">Dispatcher::setFlight</a></div><div class="ttdeci">void setFlight(Flight _flight)</div><div class="ttdef"><b>Definition:</b> Dispatcher.cpp:13</div></div>
+<div class="ttc" id="_flight_8hpp_html"><div class="ttname"><a href="_flight_8hpp.html">Flight.hpp</a></div></div>
+<div class="ttc" id="class_dispatcher_html_ad71822672a921992d4f692290f04256e"><div class="ttname"><a href="class_dispatcher.html#ad71822672a921992d4f692290f04256e">Dispatcher::Dispatcher</a></div><div class="ttdeci">Dispatcher(PlanOfFlight _plan)</div><div class="ttdef"><b>Definition:</b> Dispatcher.hpp:28</div></div>
+<div class="ttc" id="class_dispatcher_html_acd061344a58a854e72c08712e9ef8b7e"><div class="ttname"><a href="class_dispatcher.html#acd061344a58a854e72c08712e9ef8b7e">Dispatcher::plan</a></div><div class="ttdeci">PlanOfFlight plan</div><div class="ttdoc">План полета самолета </div><div class="ttdef"><b>Definition:</b> Dispatcher.hpp:20</div></div>
+<div class="ttc" id="class_dispatcher_html_a7634fa3cbe643d23e029add4319df59d"><div class="ttname"><a href="class_dispatcher.html#a7634fa3cbe643d23e029add4319df59d">Dispatcher::recalcFlightTime</a></div><div class="ttdeci">*std::pair&lt; int, int &gt; recalcFlightTime(int *averSpeed)</div><div class="ttdef"><b>Definition:</b> Dispatcher.cpp:34</div></div>
+<div class="ttc" id="class_dispatcher_html_a9b524370974d61389e698f7b0a21473f"><div class="ttname"><a href="class_dispatcher.html#a9b524370974d61389e698f7b0a21473f">Dispatcher::findLocateOnMap</a></div><div class="ttdeci">std::string findLocateOnMap()</div><div class="ttdef"><b>Definition:</b> Dispatcher.cpp:53</div></div>
+<div class="ttc" id="class_flight_html"><div class="ttname"><a href="class_flight.html">Flight</a></div><div class="ttdef"><b>Definition:</b> Flight.hpp:13</div></div>
+<div class="ttc" id="class_dispatcher_html_a8bc2b0350eb8323fc04d1af3c0c61585"><div class="ttname"><a href="class_dispatcher.html#a8bc2b0350eb8323fc04d1af3c0c61585">Dispatcher::flight</a></div><div class="ttdeci">Flight flight</div><div class="ttdoc">Реальный полет самолета </div><div class="ttdef"><b>Definition:</b> Dispatcher.hpp:22</div></div>
+<div class="ttc" id="class_dispatcher_html_a9d216113c779acef564d31da797cdaae"><div class="ttname"><a href="class_dispatcher.html#a9d216113c779acef564d31da797cdaae">Dispatcher::correctFlight</a></div><div class="ttdeci">void correctFlight(int *dist, int *averSpeed)</div><div class="ttdef"><b>Definition:</b> Dispatcher.cpp:66</div></div>
+<div class="ttc" id="class_dispatcher_html_ae676aefe97ae29d1437a7d83cb926492"><div class="ttname"><a href="class_dispatcher.html#ae676aefe97ae29d1437a7d83cb926492">Dispatcher::recalcDistance</a></div><div class="ttdeci">void recalcDistance(int *dist)</div><div class="ttdef"><b>Definition:</b> Dispatcher.cpp:18</div></div>
+<div class="ttc" id="class_dispatcher_html"><div class="ttname"><a href="class_dispatcher.html">Dispatcher</a></div><div class="ttdef"><b>Definition:</b> Dispatcher.hpp:15</div></div>
+<div class="ttc" id="class_plan_of_flight_html"><div class="ttname"><a href="class_plan_of_flight.html">PlanOfFlight</a></div><div class="ttdef"><b>Definition:</b> PlanOfFlight.hpp:17</div></div>
+<div class="ttc" id="class_dispatcher_html_aa0667608304c6859a6dea2f16d8b56e7"><div class="ttname"><a href="class_dispatcher.html#aa0667608304c6859a6dea2f16d8b56e7">Dispatcher::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Имя диспетчера </div><div class="ttdef"><b>Definition:</b> Dispatcher.hpp:18</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

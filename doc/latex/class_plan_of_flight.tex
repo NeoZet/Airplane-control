@@ -1,0 +1,359 @@
+\hypertarget{class_plan_of_flight}{}\section{Класс Plan\+Of\+Flight}
+\label{class_plan_of_flight}\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+
+
+{\ttfamily \#include $<$Plan\+Of\+Flight.\+hpp$>$}
+
+
+
+Граф связей класса Plan\+Of\+Flight\+:
+% FIG 0
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_plan_of_flight_a83a69a38400f263a176c4fc9bde86e8b}{Plan\+Of\+Flight} ()
+\item 
+\hyperlink{class_plan_of_flight_a7f24add89876b7710a0cb8a01a829b3d}{Plan\+Of\+Flight} (std\+::string \+\_\+name, \hyperlink{class_route}{Route} \+\_\+route, \hyperlink{class_plane}{Plane} \+\_\+plane, std\+::pair$<$ int, int $>$ dep\+Time, char type\+Com)
+\item 
+void \hyperlink{class_plan_of_flight_a09bd4a8025dd20fdbe3be471b7544090}{calc\+Arrive\+Time} ()
+\item 
+void \hyperlink{class_plan_of_flight_af565d1c41f46c459ee3deefa5a018b41}{calc\+Flight\+Time} ()
+\item 
+void \hyperlink{class_plan_of_flight_a87aacdfe22c2575886f86c9c153ca9e1}{load\+Route} (std\+::vector$<$ \hyperlink{class_route}{Route} $>$ vec\+Rt)
+\item 
+void \hyperlink{class_plan_of_flight_a6264f8a387d334edc34b31d15c9170e7}{load\+Plane} (std\+::vector$<$ \hyperlink{class_plane}{Plane} $>$ vec\+Pln)
+\item 
+std\+::string \hyperlink{class_plan_of_flight_aa24b3910284235291bde76df9247919a}{get\+Name} ()
+\item 
+\hyperlink{class_route}{Route} \hyperlink{class_plan_of_flight_ab495e5581417cb91781a3712f46a61a5}{get\+Route} ()
+\item 
+\hyperlink{class_plane}{Plane} \hyperlink{class_plan_of_flight_a1f096d12a2144478290b7b6eb593d89a}{get\+Plane} ()
+\item 
+int \hyperlink{class_plan_of_flight_a5a3254a3a87eb64cf58beaf9908f3b2c}{get\+Rec\+Speed} ()
+\item 
+int \hyperlink{class_plan_of_flight_ac3a81bb68ebca1fef964b4b943194ef6}{get\+Rec\+Alt} ()
+\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_plan_of_flight_aec66112d814d5683b0604a707a3088f0}{get\+Depart\+Time} ()
+\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_plan_of_flight_affac0e2f1d9bc370b7c7c90fb026f9ae}{get\+Arriv\+Time} ()
+\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_plan_of_flight_ab3a817d3a151399645c73959e063368c}{get\+Flight\+Time} ()
+\item 
+char \hyperlink{class_plan_of_flight_a31870f55b4d81dd0df9971e27144a76c}{get\+Type\+Communicate} ()
+\item 
+char \hyperlink{class_plan_of_flight_aa169239caa2fe194a0ba9c27673fa2ba}{set\+Type\+Communicate} (char type)
+\item 
+\hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \hyperlink{class_plan_of_flight_a25c9fb15b8bf60547999ef6115a86638}{operator=} (const \hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \&plan)
+\end{DoxyCompactItemize}
+\subsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_plan_of_flight_afd9a45241cb0ae50015e31c414629206}{name}
+\begin{DoxyCompactList}\small\item\em Название плана \end{DoxyCompactList}\item 
+\hyperlink{class_route}{Route} \hyperlink{class_plan_of_flight_a2408d478ac487707ca9872d34d91d546}{route}
+\begin{DoxyCompactList}\small\item\em Маршрут, выбранный для полета \end{DoxyCompactList}\item 
+\hyperlink{class_plane}{Plane} \hyperlink{class_plan_of_flight_a2d25d26b62f203d093ed65284dc97b47}{plane}
+\begin{DoxyCompactList}\small\item\em Самолет, выбранный для полета \end{DoxyCompactList}\item 
+int \hyperlink{class_plan_of_flight_ae9373a9180eeb0d5b16f17708632de0c}{recommend\+Speed}
+\begin{DoxyCompactList}\small\item\em Рекомендуемая скорость полета \end{DoxyCompactList}\item 
+int \hyperlink{class_plan_of_flight_a139966275c45fc4f73bff2e9e9fe50cd}{recommend\+Altitude}
+\begin{DoxyCompactList}\small\item\em Рекомендуемая высота полета \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_plan_of_flight_ab852aa62bb45b7c619dc07abf424fa52}{depart\+Time}
+\begin{DoxyCompactList}\small\item\em Время отправления \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_plan_of_flight_ae7b7991afcc8ec1e02dac388d45ef9e9}{arrive\+Time}
+\begin{DoxyCompactList}\small\item\em Время прибытия \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_plan_of_flight_ac09bfe7b40243bf8b6697c075c12cf98}{flight\+Time}
+\begin{DoxyCompactList}\small\item\em Время в пути \end{DoxyCompactList}\item 
+char \hyperlink{class_plan_of_flight_a69bff58fe114fa0968023a827e7aeb9c}{type\+Of\+Communicate}
+\begin{DoxyCompactList}\small\item\em Способ передачи данных (А-\/automatic, M-\/manual) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_plan_of_flight_a5a9f46f4c2beca489e0ace14dbc46dd9}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \&plan)
+\item 
+std\+::istream \& \hyperlink{class_plan_of_flight_ac6730ba5aa9ea5c88e0e751a387f7a8f}{operator$>$$>$} (std\+::istream \&in, \hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \&plan)
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс, описывающий план полета самолета. Содержит -\/get и -\/set методы, а также методы подсчета времени прибытия и времени полета, перегруженные операторы ввода/вывода, присваивания 
+
+\subsection{Конструктор(ы)}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{Plan\+Of\+Flight()}{PlanOfFlight()}}]{\setlength{\rightskip}{0pt plus 5cm}Plan\+Of\+Flight\+::\+Plan\+Of\+Flight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_plan_of_flight_a83a69a38400f263a176c4fc9bde86e8b}{}\label{class_plan_of_flight_a83a69a38400f263a176c4fc9bde86e8b}
+Конструктор по умолчанию \index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{Plan\+Of\+Flight(std\+::string \+\_\+name, Route \+\_\+route, Plane \+\_\+plane, std\+::pair$<$ int, int $>$ dep\+Time, char type\+Com)}{PlanOfFlight(std::string _name, Route _route, Plane _plane, std::pair< int, int > depTime, char typeCom)}}]{\setlength{\rightskip}{0pt plus 5cm}Plan\+Of\+Flight\+::\+Plan\+Of\+Flight (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{\+\_\+name, }
+\item[{{\bf Route}}]{\+\_\+route, }
+\item[{{\bf Plane}}]{\+\_\+plane, }
+\item[{std\+::pair$<$ int, int $>$}]{dep\+Time, }
+\item[{char}]{type\+Com}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_plan_of_flight_a7f24add89876b7710a0cb8a01a829b3d}{}\label{class_plan_of_flight_a7f24add89876b7710a0cb8a01a829b3d}
+Конструктор, инициализирующий атрибуты класса 
+
+\subsection{Методы}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!calc\+Arrive\+Time@{calc\+Arrive\+Time}}
+\index{calc\+Arrive\+Time@{calc\+Arrive\+Time}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{calc\+Arrive\+Time()}{calcArriveTime()}}]{\setlength{\rightskip}{0pt plus 5cm}void Plan\+Of\+Flight\+::calc\+Arrive\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_a09bd4a8025dd20fdbe3be471b7544090}{}\label{class_plan_of_flight_a09bd4a8025dd20fdbe3be471b7544090}
+Метод, предназначенный для расчета времени прибытия \index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!calc\+Flight\+Time@{calc\+Flight\+Time}}
+\index{calc\+Flight\+Time@{calc\+Flight\+Time}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{calc\+Flight\+Time()}{calcFlightTime()}}]{\setlength{\rightskip}{0pt plus 5cm}void Plan\+Of\+Flight\+::calc\+Flight\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_af565d1c41f46c459ee3deefa5a018b41}{}\label{class_plan_of_flight_af565d1c41f46c459ee3deefa5a018b41}
+Метод, предназначенный для рассчета длительности полета \index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Arriv\+Time@{get\+Arriv\+Time}}
+\index{get\+Arriv\+Time@{get\+Arriv\+Time}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Arriv\+Time()}{getArrivTime()}}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ int, int $>$ Plan\+Of\+Flight\+::get\+Arriv\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_affac0e2f1d9bc370b7c7c90fb026f9ae}{}\label{class_plan_of_flight_affac0e2f1d9bc370b7c7c90fb026f9ae}
+Метод, возвращающий время прибытия \begin{DoxyReturn}{Возвращает}
+arrive\+Time 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Depart\+Time@{get\+Depart\+Time}}
+\index{get\+Depart\+Time@{get\+Depart\+Time}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Depart\+Time()}{getDepartTime()}}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ int, int $>$ Plan\+Of\+Flight\+::get\+Depart\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_aec66112d814d5683b0604a707a3088f0}{}\label{class_plan_of_flight_aec66112d814d5683b0604a707a3088f0}
+Метод, возвращающий время вылета \begin{DoxyReturn}{Возвращает}
+depart\+Time 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Flight\+Time@{get\+Flight\+Time}}
+\index{get\+Flight\+Time@{get\+Flight\+Time}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Flight\+Time()}{getFlightTime()}}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ int, int $>$ Plan\+Of\+Flight\+::get\+Flight\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_ab3a817d3a151399645c73959e063368c}{}\label{class_plan_of_flight_ab3a817d3a151399645c73959e063368c}
+Метод, возвращающий время полета \begin{DoxyReturn}{Возвращает}
+flight\+Time 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Name()}{getName()}}]{\setlength{\rightskip}{0pt plus 5cm}string Plan\+Of\+Flight\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_aa24b3910284235291bde76df9247919a}{}\label{class_plan_of_flight_aa24b3910284235291bde76df9247919a}
+Метод, возвращающий название плана \begin{DoxyReturn}{Возвращает}
+name название плана 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Plane@{get\+Plane}}
+\index{get\+Plane@{get\+Plane}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Plane()}{getPlane()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plane} Plan\+Of\+Flight\+::get\+Plane (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_a1f096d12a2144478290b7b6eb593d89a}{}\label{class_plan_of_flight_a1f096d12a2144478290b7b6eb593d89a}
+Метод, возвращающий самолет \begin{DoxyReturn}{Возвращает}
+plane 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Rec\+Alt@{get\+Rec\+Alt}}
+\index{get\+Rec\+Alt@{get\+Rec\+Alt}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Rec\+Alt()}{getRecAlt()}}]{\setlength{\rightskip}{0pt plus 5cm}int Plan\+Of\+Flight\+::get\+Rec\+Alt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_ac3a81bb68ebca1fef964b4b943194ef6}{}\label{class_plan_of_flight_ac3a81bb68ebca1fef964b4b943194ef6}
+Метод, возвращающий рекомендуемую высоту \begin{DoxyReturn}{Возвращает}
+recommend\+Altitude 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Rec\+Speed@{get\+Rec\+Speed}}
+\index{get\+Rec\+Speed@{get\+Rec\+Speed}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Rec\+Speed()}{getRecSpeed()}}]{\setlength{\rightskip}{0pt plus 5cm}int Plan\+Of\+Flight\+::get\+Rec\+Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_a5a3254a3a87eb64cf58beaf9908f3b2c}{}\label{class_plan_of_flight_a5a3254a3a87eb64cf58beaf9908f3b2c}
+Метод, возвращающий рекомендуемую скорость \begin{DoxyReturn}{Возвращает}
+recommend\+Speed 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Route@{get\+Route}}
+\index{get\+Route@{get\+Route}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Route()}{getRoute()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Route} Plan\+Of\+Flight\+::get\+Route (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_ab495e5581417cb91781a3712f46a61a5}{}\label{class_plan_of_flight_ab495e5581417cb91781a3712f46a61a5}
+Метод, возвращающий маршрут \begin{DoxyReturn}{Возвращает}
+route 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!get\+Type\+Communicate@{get\+Type\+Communicate}}
+\index{get\+Type\+Communicate@{get\+Type\+Communicate}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{get\+Type\+Communicate()}{getTypeCommunicate()}}]{\setlength{\rightskip}{0pt plus 5cm}char Plan\+Of\+Flight\+::get\+Type\+Communicate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_a31870f55b4d81dd0df9971e27144a76c}{}\label{class_plan_of_flight_a31870f55b4d81dd0df9971e27144a76c}
+Метод, возвращающий способ передачи данных \begin{DoxyReturn}{Возвращает}
+type\+Of\+Communicate 
+\end{DoxyReturn}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!load\+Plane@{load\+Plane}}
+\index{load\+Plane@{load\+Plane}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{load\+Plane(std\+::vector$<$ Plane $>$ vec\+Pln)}{loadPlane(std::vector< Plane > vecPln)}}]{\setlength{\rightskip}{0pt plus 5cm}void Plan\+Of\+Flight\+::load\+Plane (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Plane} $>$}]{vec\+Pln}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_a6264f8a387d334edc34b31d15c9170e7}{}\label{class_plan_of_flight_a6264f8a387d334edc34b31d15c9170e7}
+Метод, загружающий данные самолета по его названию 
+\begin{DoxyParams}{Аргументы}
+{\em vec\+Pln} & вектор самолетов, из которого выполняется загрузка \\
+\hline
+\end{DoxyParams}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!load\+Route@{load\+Route}}
+\index{load\+Route@{load\+Route}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{load\+Route(std\+::vector$<$ Route $>$ vec\+Rt)}{loadRoute(std::vector< Route > vecRt)}}]{\setlength{\rightskip}{0pt plus 5cm}void Plan\+Of\+Flight\+::load\+Route (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Route} $>$}]{vec\+Rt}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_a87aacdfe22c2575886f86c9c153ca9e1}{}\label{class_plan_of_flight_a87aacdfe22c2575886f86c9c153ca9e1}
+Метод, загружающий данные маршрута по его названию 
+\begin{DoxyParams}{Аргументы}
+{\em vec\+Rt} & вектор маршрутов, из которого выполняется загрузка \\
+\hline
+\end{DoxyParams}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!operator=@{operator=}}
+\index{operator=@{operator=}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{operator=(const Plan\+Of\+Flight \&plan)}{operator=(const PlanOfFlight &plan)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plan\+Of\+Flight} Plan\+Of\+Flight\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Plan\+Of\+Flight} \&}]{plan}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_a25c9fb15b8bf60547999ef6115a86638}{}\label{class_plan_of_flight_a25c9fb15b8bf60547999ef6115a86638}
+Перегруженный оператор присваивания 
+\begin{DoxyParams}{Аргументы}
+{\em \&plan} & ссылка на присваеваемый объект \\
+\hline
+\end{DoxyParams}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!set\+Type\+Communicate@{set\+Type\+Communicate}}
+\index{set\+Type\+Communicate@{set\+Type\+Communicate}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{set\+Type\+Communicate(char type)}{setTypeCommunicate(char type)}}]{\setlength{\rightskip}{0pt plus 5cm}char Plan\+Of\+Flight\+::set\+Type\+Communicate (
+\begin{DoxyParamCaption}
+\item[{char}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_plan_of_flight_aa169239caa2fe194a0ba9c27673fa2ba}{}\label{class_plan_of_flight_aa169239caa2fe194a0ba9c27673fa2ba}
+Метод, инициализирующий способ передачи данных A -\/ automatic, M -\/ manual 
+\begin{DoxyParams}{Аргументы}
+{\em type} & способ передачи данных с самолета диспетчеру \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Документация по друзьям класса и функциям, относящимся к классу}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{{\bf Plan\+Of\+Flight} \&}]{plan}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_plan_of_flight_a5a9f46f4c2beca489e0ace14dbc46dd9}{}\label{class_plan_of_flight_a5a9f46f4c2beca489e0ace14dbc46dd9}
+Перегруженный оператор вывода 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt out}  & {\em \&out} & Ссылка на поток вывода \\
+\hline
+\mbox{\tt in}  & {\em \&plan} & Ссылка на класс \hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \\
+\hline
+\end{DoxyParams}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{operator$>$$>$}{operator>>}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{in, }
+\item[{{\bf Plan\+Of\+Flight} \&}]{plan}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_plan_of_flight_ac6730ba5aa9ea5c88e0e751a387f7a8f}{}\label{class_plan_of_flight_ac6730ba5aa9ea5c88e0e751a387f7a8f}
+Перегруженный оператор ввода данных 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt out}  & {\em \&in} & Ссылка на поток ввода \\
+\hline
+\mbox{\tt in}  & {\em \&plan} & Ссылка на класс \hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Данные класса}
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!arrive\+Time@{arrive\+Time}}
+\index{arrive\+Time@{arrive\+Time}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{arrive\+Time}{arriveTime}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$int, int$>$ Plan\+Of\+Flight\+::arrive\+Time\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_ae7b7991afcc8ec1e02dac388d45ef9e9}{}\label{class_plan_of_flight_ae7b7991afcc8ec1e02dac388d45ef9e9}
+
+
+Время прибытия 
+
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!depart\+Time@{depart\+Time}}
+\index{depart\+Time@{depart\+Time}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{depart\+Time}{departTime}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$int, int$>$ Plan\+Of\+Flight\+::depart\+Time\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_ab852aa62bb45b7c619dc07abf424fa52}{}\label{class_plan_of_flight_ab852aa62bb45b7c619dc07abf424fa52}
+
+
+Время отправления 
+
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!flight\+Time@{flight\+Time}}
+\index{flight\+Time@{flight\+Time}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{flight\+Time}{flightTime}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$int, int$>$ Plan\+Of\+Flight\+::flight\+Time\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_ac09bfe7b40243bf8b6697c075c12cf98}{}\label{class_plan_of_flight_ac09bfe7b40243bf8b6697c075c12cf98}
+
+
+Время в пути 
+
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!name@{name}}
+\index{name@{name}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Plan\+Of\+Flight\+::name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_afd9a45241cb0ae50015e31c414629206}{}\label{class_plan_of_flight_afd9a45241cb0ae50015e31c414629206}
+
+
+Название плана 
+
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!plane@{plane}}
+\index{plane@{plane}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{plane}{plane}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plane} Plan\+Of\+Flight\+::plane\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_a2d25d26b62f203d093ed65284dc97b47}{}\label{class_plan_of_flight_a2d25d26b62f203d093ed65284dc97b47}
+
+
+Самолет, выбранный для полета 
+
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!recommend\+Altitude@{recommend\+Altitude}}
+\index{recommend\+Altitude@{recommend\+Altitude}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{recommend\+Altitude}{recommendAltitude}}]{\setlength{\rightskip}{0pt plus 5cm}int Plan\+Of\+Flight\+::recommend\+Altitude\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_a139966275c45fc4f73bff2e9e9fe50cd}{}\label{class_plan_of_flight_a139966275c45fc4f73bff2e9e9fe50cd}
+
+
+Рекомендуемая высота полета 
+
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!recommend\+Speed@{recommend\+Speed}}
+\index{recommend\+Speed@{recommend\+Speed}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{recommend\+Speed}{recommendSpeed}}]{\setlength{\rightskip}{0pt plus 5cm}int Plan\+Of\+Flight\+::recommend\+Speed\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_ae9373a9180eeb0d5b16f17708632de0c}{}\label{class_plan_of_flight_ae9373a9180eeb0d5b16f17708632de0c}
+
+
+Рекомендуемая скорость полета 
+
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!route@{route}}
+\index{route@{route}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{route}{route}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Route} Plan\+Of\+Flight\+::route\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_a2408d478ac487707ca9872d34d91d546}{}\label{class_plan_of_flight_a2408d478ac487707ca9872d34d91d546}
+
+
+Маршрут, выбранный для полета 
+
+\index{Plan\+Of\+Flight@{Plan\+Of\+Flight}!type\+Of\+Communicate@{type\+Of\+Communicate}}
+\index{type\+Of\+Communicate@{type\+Of\+Communicate}!Plan\+Of\+Flight@{Plan\+Of\+Flight}}
+\subsubsection[{\texorpdfstring{type\+Of\+Communicate}{typeOfCommunicate}}]{\setlength{\rightskip}{0pt plus 5cm}char Plan\+Of\+Flight\+::type\+Of\+Communicate\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_plan_of_flight_a69bff58fe114fa0968023a827e7aeb9c}{}\label{class_plan_of_flight_a69bff58fe114fa0968023a827e7aeb9c}
+
+
+Способ передачи данных (А-\/automatic, M-\/manual) 
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_plan_of_flight_8hpp}{Plan\+Of\+Flight.\+hpp}\item 
+\hyperlink{_plan_of_flight_8cpp}{Plan\+Of\+Flight.\+cpp}\end{DoxyCompactItemize}

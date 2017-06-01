@@ -1,0 +1,90 @@
+\hypertarget{class_base}{}\section{Класс Base}
+\label{class_base}\index{Base@{Base}}
+
+
+{\ttfamily \#include $<$Base.\+hpp$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_base_a3f5ae7fe9126f2473915d674b71a6ffd}{Load\+Data} (\hyperlink{class_list_of_plane}{List\+Of\+Plane} \&pl, \hyperlink{class_list_of_route}{List\+Of\+Route} \&rt, \hyperlink{class_list_of_point}{List\+Of\+Point} \&point)
+\item 
+void \hyperlink{class_base_a8f97c651d0b56270af329f72bd07f8ec}{Save\+Data} (\hyperlink{class_list_of_plane}{List\+Of\+Plane} \&pl, \hyperlink{class_list_of_route}{List\+Of\+Route} \&rt, \hyperlink{class_list_of_point}{List\+Of\+Point} \&point)
+\item 
+\hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \hyperlink{class_base_a278917b9fd932124d26c5f972fb94d4c}{make\+Plan\+Of\+Flight} (std\+::vector$<$ \hyperlink{class_route}{Route} $>$ vec\+Rt, std\+::vector$<$ \hyperlink{class_plane}{Plane} $>$ vec\+Plane)
+\item 
+int \hyperlink{class_base_af094f35baefd9149bba9d99bccc8789c}{run} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Основной рабочий класс, содержащий методы загрузки/сохранения данных, создания плана полета и метод, содержащий меню программы и запускающий её 
+
+\subsection{Методы}
+\index{Base@{Base}!Load\+Data@{Load\+Data}}
+\index{Load\+Data@{Load\+Data}!Base@{Base}}
+\subsubsection[{\texorpdfstring{Load\+Data(\+List\+Of\+Plane \&pl, List\+Of\+Route \&rt, List\+Of\+Point \&point)}{LoadData(ListOfPlane &pl, ListOfRoute &rt, ListOfPoint &point)}}]{\setlength{\rightskip}{0pt plus 5cm}void Base\+::\+Load\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf List\+Of\+Plane} \&}]{pl, }
+\item[{{\bf List\+Of\+Route} \&}]{rt, }
+\item[{{\bf List\+Of\+Point} \&}]{point}
+\end{DoxyParamCaption}
+)}\hypertarget{class_base_a3f5ae7fe9126f2473915d674b71a6ffd}{}\label{class_base_a3f5ae7fe9126f2473915d674b71a6ffd}
+Метод, загружающий данные из файлов в векторы соответвующих данных 
+\begin{DoxyParams}{Аргументы}
+{\em pl} & вектор самолетов \\
+\hline
+{\em rt} & вектор маршрутов \\
+\hline
+{\em point} & вектор точек \\
+\hline
+\end{DoxyParams}
+\index{Base@{Base}!make\+Plan\+Of\+Flight@{make\+Plan\+Of\+Flight}}
+\index{make\+Plan\+Of\+Flight@{make\+Plan\+Of\+Flight}!Base@{Base}}
+\subsubsection[{\texorpdfstring{make\+Plan\+Of\+Flight(std\+::vector$<$ Route $>$ vec\+Rt, std\+::vector$<$ Plane $>$ vec\+Plane)}{makePlanOfFlight(std::vector< Route > vecRt, std::vector< Plane > vecPlane)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plan\+Of\+Flight} Base\+::make\+Plan\+Of\+Flight (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Route} $>$}]{vec\+Rt, }
+\item[{std\+::vector$<$ {\bf Plane} $>$}]{vec\+Plane}
+\end{DoxyParamCaption}
+)}\hypertarget{class_base_a278917b9fd932124d26c5f972fb94d4c}{}\label{class_base_a278917b9fd932124d26c5f972fb94d4c}
+Метод, позволяющий создавать новый план полета 
+\begin{DoxyParams}{Аргументы}
+{\em vec\+Rt} & вектор маршрутов \\
+\hline
+{\em vec\+Plane} & вектор самолетов \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+plan план полета 
+\end{DoxyReturn}
+\index{Base@{Base}!run@{run}}
+\index{run@{run}!Base@{Base}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}int Base\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_base_af094f35baefd9149bba9d99bccc8789c}{}\label{class_base_af094f35baefd9149bba9d99bccc8789c}
+Метод, содержащий меню программы и запускающий её работу \index{Base@{Base}!Save\+Data@{Save\+Data}}
+\index{Save\+Data@{Save\+Data}!Base@{Base}}
+\subsubsection[{\texorpdfstring{Save\+Data(\+List\+Of\+Plane \&pl, List\+Of\+Route \&rt, List\+Of\+Point \&point)}{SaveData(ListOfPlane &pl, ListOfRoute &rt, ListOfPoint &point)}}]{\setlength{\rightskip}{0pt plus 5cm}void Base\+::\+Save\+Data (
+\begin{DoxyParamCaption}
+\item[{{\bf List\+Of\+Plane} \&}]{pl, }
+\item[{{\bf List\+Of\+Route} \&}]{rt, }
+\item[{{\bf List\+Of\+Point} \&}]{point}
+\end{DoxyParamCaption}
+)}\hypertarget{class_base_a8f97c651d0b56270af329f72bd07f8ec}{}\label{class_base_a8f97c651d0b56270af329f72bd07f8ec}
+Метод, сохраняющий данные из контейнеров в соответсвующие файлы 
+\begin{DoxyParams}{Аргументы}
+{\em pl} & вектор самолетов \\
+\hline
+{\em rt} & вектор маршрутов \\
+\hline
+{\em point} & вектор точек \\
+\hline
+\end{DoxyParams}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_base_8hpp}{Base.\+hpp}\item 
+\hyperlink{_base_8cpp}{Base.\+cpp}\end{DoxyCompactItemize}

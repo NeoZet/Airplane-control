@@ -1,0 +1,231 @@
+\hypertarget{class_route}{}\section{Класс Route}
+\label{class_route}\index{Route@{Route}}
+
+
+{\ttfamily \#include $<$Route.\+hpp$>$}
+
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_route_a3a42d0ecdba9a716884f3f258a906cdd}{calc\+Length\+Of\+Edge} (\hyperlink{class_point}{Point} start, \hyperlink{class_point}{Point} finish)
+\item 
+void \hyperlink{class_route_a8919ddfcd64219d7635fdf13eebba617}{calc\+Distance} ()
+\item 
+void \hyperlink{class_route_a740bdd3ca221a378061511b462829fe9}{generate\+Vec\+Edge} ()
+\item 
+void \hyperlink{class_route_aa897e0be7471d42af9a638e2665bd055}{set\+Name} (std\+::string \+\_\+name)
+\item 
+void \hyperlink{class_route_af3241c7833b6062dde3cd145c4193f01}{set\+Inside\+Point} (std\+::vector$<$ \hyperlink{class_point}{Point} $>$ \+\_\+vec\+Inside\+Point)
+\item 
+std\+::string \hyperlink{class_route_a05cef7cb5d15f6a9028b24ff3eec2da0}{get\+Name} ()
+\item 
+std\+::vector$<$ \hyperlink{class_point}{Point} $>$ \hyperlink{class_route_a22238d31fd4958d705b459c640c3db0d}{get\+Inside\+Point} ()
+\item 
+std\+::vector$<$ int $>$ \hyperlink{class_route_a7012434b20ade0167b5430b3d5de4421}{get\+Edge\+List} ()
+\item 
+int \hyperlink{class_route_af90912500d799fd026ec7d6d35d20555}{get\+Distance} ()
+\item 
+\hyperlink{class_route}{Route} \& \hyperlink{class_route_a41b589dc05cbb8a6399b934545f71731}{operator=} (const \hyperlink{class_route}{Route} \&route)
+\end{DoxyCompactItemize}
+\subsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_route_a892cceaead1c1602577ddfa5f9b1df32}{name}
+\begin{DoxyCompactList}\small\item\em Название маршрута \end{DoxyCompactList}\item 
+int \hyperlink{class_route_a29e1ec576b2d6a5b4281b414f11e6bc6}{distance}
+\begin{DoxyCompactList}\small\item\em Расстояние между начальным и конечным пунктом \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_point}{Point} $>$ \hyperlink{class_route_a5b26e655044d222f569daf4639c8ff48}{vec\+Inside\+Point}
+\begin{DoxyCompactList}\small\item\em Вектор точек \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \hyperlink{class_route_a9eb67e4bd0e29d2a53fa20aba73beaa8}{edge\+List}
+\begin{DoxyCompactList}\small\item\em Вектор рёбер \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Друзья}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{class_route_afb23c44ff142a18cd627d884caadb52f}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{class_route}{Route} \&route)
+\item 
+std\+::istream \& \hyperlink{class_route_a4426233b29de8e20699f267f8d4460e9}{operator$>$$>$} (std\+::istream \&in, \hyperlink{class_route}{Route} \&route)
+\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс,описывающий маршруты.\+Содержит -\/get и -\/set методы, перегруженные операторы ввода/вывод,а также методы,позволяющие рассчитать расстояние между любыми двумя точками, сгенерировать вектор ребер и рассчитать длину маршрута. 
+
+\subsection{Методы}
+\index{Route@{Route}!calc\+Distance@{calc\+Distance}}
+\index{calc\+Distance@{calc\+Distance}!Route@{Route}}
+\subsubsection[{\texorpdfstring{calc\+Distance()}{calcDistance()}}]{\setlength{\rightskip}{0pt plus 5cm}void Route\+::calc\+Distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_a8919ddfcd64219d7635fdf13eebba617}{}\label{class_route_a8919ddfcd64219d7635fdf13eebba617}
+Метод,позволяющий рассчитать длину маршрута \index{Route@{Route}!calc\+Length\+Of\+Edge@{calc\+Length\+Of\+Edge}}
+\index{calc\+Length\+Of\+Edge@{calc\+Length\+Of\+Edge}!Route@{Route}}
+\subsubsection[{\texorpdfstring{calc\+Length\+Of\+Edge(\+Point start, Point finish)}{calcLengthOfEdge(Point start, Point finish)}}]{\setlength{\rightskip}{0pt plus 5cm}int Route\+::calc\+Length\+Of\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf Point}}]{start, }
+\item[{{\bf Point}}]{finish}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_a3a42d0ecdba9a716884f3f258a906cdd}{}\label{class_route_a3a42d0ecdba9a716884f3f258a906cdd}
+Метод,позволяющий рассчитать длину ребра 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em start} & начало ребра \\
+\hline
+\mbox{\tt in}  & {\em finish} & конец ребра \\
+\hline
+\end{DoxyParams}
+\index{Route@{Route}!generate\+Vec\+Edge@{generate\+Vec\+Edge}}
+\index{generate\+Vec\+Edge@{generate\+Vec\+Edge}!Route@{Route}}
+\subsubsection[{\texorpdfstring{generate\+Vec\+Edge()}{generateVecEdge()}}]{\setlength{\rightskip}{0pt plus 5cm}void Route\+::generate\+Vec\+Edge (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_a740bdd3ca221a378061511b462829fe9}{}\label{class_route_a740bdd3ca221a378061511b462829fe9}
+Метод, позволяющий сгенерировать вектор ребер \index{Route@{Route}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!Route@{Route}}
+\subsubsection[{\texorpdfstring{get\+Distance()}{getDistance()}}]{\setlength{\rightskip}{0pt plus 5cm}int Route\+::get\+Distance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_af90912500d799fd026ec7d6d35d20555}{}\label{class_route_af90912500d799fd026ec7d6d35d20555}
+Метод,возвращающий Расстояние между начальным и конечным пунктом \begin{DoxyReturn}{Возвращает}
+distance 
+\end{DoxyReturn}
+\index{Route@{Route}!get\+Edge\+List@{get\+Edge\+List}}
+\index{get\+Edge\+List@{get\+Edge\+List}!Route@{Route}}
+\subsubsection[{\texorpdfstring{get\+Edge\+List()}{getEdgeList()}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ Route\+::get\+Edge\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_a7012434b20ade0167b5430b3d5de4421}{}\label{class_route_a7012434b20ade0167b5430b3d5de4421}
+Метод,возвращающий вектор вектор рёбер \begin{DoxyReturn}{Возвращает}
+edge\+List 
+\end{DoxyReturn}
+\index{Route@{Route}!get\+Inside\+Point@{get\+Inside\+Point}}
+\index{get\+Inside\+Point@{get\+Inside\+Point}!Route@{Route}}
+\subsubsection[{\texorpdfstring{get\+Inside\+Point()}{getInsidePoint()}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Point} $>$ Route\+::get\+Inside\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_a22238d31fd4958d705b459c640c3db0d}{}\label{class_route_a22238d31fd4958d705b459c640c3db0d}
+Метод,возвращающий вектор точек \begin{DoxyReturn}{Возвращает}
+vec\+Inside\+Point 
+\end{DoxyReturn}
+\index{Route@{Route}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Route@{Route}}
+\subsubsection[{\texorpdfstring{get\+Name()}{getName()}}]{\setlength{\rightskip}{0pt plus 5cm}string Route\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_a05cef7cb5d15f6a9028b24ff3eec2da0}{}\label{class_route_a05cef7cb5d15f6a9028b24ff3eec2da0}
+Метод,возвращающий название маршрута \begin{DoxyReturn}{Возвращает}
+name 
+\end{DoxyReturn}
+\index{Route@{Route}!operator=@{operator=}}
+\index{operator=@{operator=}!Route@{Route}}
+\subsubsection[{\texorpdfstring{operator=(const Route \&route)}{operator=(const Route &route)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Route} \& Route\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Route} \&}]{route}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_a41b589dc05cbb8a6399b934545f71731}{}\label{class_route_a41b589dc05cbb8a6399b934545f71731}
+Перегруженный оператор присваивания 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em \&route} & ссылка на присваеваемый объект \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+\&\hyperlink{class_route}{Route} 
+\end{DoxyReturn}
+\index{Route@{Route}!set\+Inside\+Point@{set\+Inside\+Point}}
+\index{set\+Inside\+Point@{set\+Inside\+Point}!Route@{Route}}
+\subsubsection[{\texorpdfstring{set\+Inside\+Point(std\+::vector$<$ Point $>$ \+\_\+vec\+Inside\+Point)}{setInsidePoint(std::vector< Point > _vecInsidePoint)}}]{\setlength{\rightskip}{0pt plus 5cm}void Route\+::set\+Inside\+Point (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Point} $>$}]{\+\_\+vec\+Inside\+Point}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_af3241c7833b6062dde3cd145c4193f01}{}\label{class_route_af3241c7833b6062dde3cd145c4193f01}
+Метод,предназначенный для инициализации вектора точек 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em \+\_\+vec\+Inside\+Point} & вектор точек \\
+\hline
+\end{DoxyParams}
+\index{Route@{Route}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Route@{Route}}
+\subsubsection[{\texorpdfstring{set\+Name(std\+::string \+\_\+name)}{setName(std::string _name)}}]{\setlength{\rightskip}{0pt plus 5cm}void Route\+::set\+Name (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{class_route_aa897e0be7471d42af9a638e2665bd055}{}\label{class_route_aa897e0be7471d42af9a638e2665bd055}
+Метод,предназначенный для инициализации названия маршрута 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em \+\_\+name} & название маршрута \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Документация по друзьям класса и функциям, относящимся к классу}
+\index{Route@{Route}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Route@{Route}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{{\bf Route} \&}]{route}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_route_afb23c44ff142a18cd627d884caadb52f}{}\label{class_route_afb23c44ff142a18cd627d884caadb52f}
+Перегруженный оператор вывода для класса \hyperlink{class_route}{Route} 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt out}  & {\em \&out} & Ссылка на поток вывода \\
+\hline
+\mbox{\tt in}  & {\em \&route} & Ссылка на класс \hyperlink{class_route}{Route} \\
+\hline
+\end{DoxyParams}
+\index{Route@{Route}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Route@{Route}}
+\subsubsection[{\texorpdfstring{operator$>$$>$}{operator>>}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{in, }
+\item[{{\bf Route} \&}]{route}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{class_route_a4426233b29de8e20699f267f8d4460e9}{}\label{class_route_a4426233b29de8e20699f267f8d4460e9}
+Перегруженный оператор ввода данных для класса \hyperlink{class_route}{Route} 
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\tt in}  & {\em \&in} & Ссылка на поток ввода \\
+\hline
+\mbox{\tt out}  & {\em \&route} & Ссылка на класс \hyperlink{class_route}{Route} \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Данные класса}
+\index{Route@{Route}!distance@{distance}}
+\index{distance@{distance}!Route@{Route}}
+\subsubsection[{\texorpdfstring{distance}{distance}}]{\setlength{\rightskip}{0pt plus 5cm}int Route\+::distance\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_route_a29e1ec576b2d6a5b4281b414f11e6bc6}{}\label{class_route_a29e1ec576b2d6a5b4281b414f11e6bc6}
+
+
+Расстояние между начальным и конечным пунктом 
+
+\index{Route@{Route}!edge\+List@{edge\+List}}
+\index{edge\+List@{edge\+List}!Route@{Route}}
+\subsubsection[{\texorpdfstring{edge\+List}{edgeList}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ Route\+::edge\+List\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_route_a9eb67e4bd0e29d2a53fa20aba73beaa8}{}\label{class_route_a9eb67e4bd0e29d2a53fa20aba73beaa8}
+
+
+Вектор рёбер 
+
+\index{Route@{Route}!name@{name}}
+\index{name@{name}!Route@{Route}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Route\+::name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_route_a892cceaead1c1602577ddfa5f9b1df32}{}\label{class_route_a892cceaead1c1602577ddfa5f9b1df32}
+
+
+Название маршрута 
+
+\index{Route@{Route}!vec\+Inside\+Point@{vec\+Inside\+Point}}
+\index{vec\+Inside\+Point@{vec\+Inside\+Point}!Route@{Route}}
+\subsubsection[{\texorpdfstring{vec\+Inside\+Point}{vecInsidePoint}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Point}$>$ Route\+::vec\+Inside\+Point\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_route_a5b26e655044d222f569daf4639c8ff48}{}\label{class_route_a5b26e655044d222f569daf4639c8ff48}
+
+
+Вектор точек 
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_route_8hpp}{Route.\+hpp}\item 
+\hyperlink{_route_8cpp}{Route.\+cpp}\end{DoxyCompactItemize}

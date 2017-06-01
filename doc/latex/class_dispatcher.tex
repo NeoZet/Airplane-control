@@ -1,0 +1,149 @@
+\hypertarget{class_dispatcher}{}\section{Класс Dispatcher}
+\label{class_dispatcher}\index{Dispatcher@{Dispatcher}}
+
+
+{\ttfamily \#include $<$Dispatcher.\+hpp$>$}
+
+
+
+Граф связей класса Dispatcher\+:
+% FIG 0
+\subsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dispatcher_ad71822672a921992d4f692290f04256e}{Dispatcher} (\hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \+\_\+plan)
+\item 
+void \hyperlink{class_dispatcher_a68ff23b5fc803c57bf77edee96ff1cba}{set\+Flight} (\hyperlink{class_flight}{Flight} \+\_\+flight)
+\item 
+void \hyperlink{class_dispatcher_a9d216113c779acef564d31da797cdaae}{correct\+Flight} (int $\ast$dist, int $\ast$aver\+Speed)
+\item 
+$\ast$std\+::pair$<$ int, int $>$ \hyperlink{class_dispatcher_a7634fa3cbe643d23e029add4319df59d}{recalc\+Flight\+Time} (int $\ast$aver\+Speed)
+\item 
+void \hyperlink{class_dispatcher_ae676aefe97ae29d1437a7d83cb926492}{recalc\+Distance} (int $\ast$dist)
+\item 
+std\+::string \hyperlink{class_dispatcher_a9b524370974d61389e698f7b0a21473f}{find\+Locate\+On\+Map} ()
+\end{DoxyCompactItemize}
+\subsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_dispatcher_aa0667608304c6859a6dea2f16d8b56e7}{name}
+\begin{DoxyCompactList}\small\item\em Имя диспетчера \end{DoxyCompactList}\item 
+\hyperlink{class_plan_of_flight}{Plan\+Of\+Flight} \hyperlink{class_dispatcher_acd061344a58a854e72c08712e9ef8b7e}{plan}
+\begin{DoxyCompactList}\small\item\em План полета самолета \end{DoxyCompactList}\item 
+\hyperlink{class_flight}{Flight} \hyperlink{class_dispatcher_a8bc2b0350eb8323fc04d1af3c0c61585}{flight}
+\begin{DoxyCompactList}\small\item\em Реальный полет самолета \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Подробное описание}
+Класс, описывающий диспетчера, и позволяющий вести сравнение реального полета с планом и корректировать конечные данные. Содержит конструктор,-\/get и -\/set методы, перегруженные операторы ввода/вывода. Имеет метод корректировки и отслеживания полета, а также методы перерассчета оставшегося расстояния и времени. 
+
+\subsection{Конструктор(ы)}
+\index{Dispatcher@{Dispatcher}!Dispatcher@{Dispatcher}}
+\index{Dispatcher@{Dispatcher}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{Dispatcher(\+Plan\+Of\+Flight \+\_\+plan)}{Dispatcher(PlanOfFlight _plan)}}]{\setlength{\rightskip}{0pt plus 5cm}Dispatcher\+::\+Dispatcher (
+\begin{DoxyParamCaption}
+\item[{{\bf Plan\+Of\+Flight}}]{\+\_\+plan}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_dispatcher_ad71822672a921992d4f692290f04256e}{}\label{class_dispatcher_ad71822672a921992d4f692290f04256e}
+Конструктор, инициализирующий план полета 
+\begin{DoxyParams}{Аргументы}
+{\em \+\_\+plan} & план полета самолета \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Методы}
+\index{Dispatcher@{Dispatcher}!correct\+Flight@{correct\+Flight}}
+\index{correct\+Flight@{correct\+Flight}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{correct\+Flight(int $\ast$dist, int $\ast$aver\+Speed)}{correctFlight(int *dist, int *averSpeed)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dispatcher\+::correct\+Flight (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{dist, }
+\item[{int $\ast$}]{aver\+Speed}
+\end{DoxyParamCaption}
+)}\hypertarget{class_dispatcher_a9d216113c779acef564d31da797cdaae}{}\label{class_dispatcher_a9d216113c779acef564d31da797cdaae}
+Метод, позволяющий отследивать сравнивать и корректировать полет самолета в соответсвии с планом полета 
+\begin{DoxyParams}{Аргументы}
+{\em dist} & длина пути \\
+\hline
+{\em aver\+Speed} & средняя скорость \\
+\hline
+\end{DoxyParams}
+\index{Dispatcher@{Dispatcher}!find\+Locate\+On\+Map@{find\+Locate\+On\+Map}}
+\index{find\+Locate\+On\+Map@{find\+Locate\+On\+Map}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{find\+Locate\+On\+Map()}{findLocateOnMap()}}]{\setlength{\rightskip}{0pt plus 5cm}string Dispatcher\+::find\+Locate\+On\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_dispatcher_a9b524370974d61389e698f7b0a21473f}{}\label{class_dispatcher_a9b524370974d61389e698f7b0a21473f}
+Метод, определяющий точки, через которые прооходит полет в данный момент \begin{DoxyReturn}{Возвращает}
+point точка, через которую пролетел самолет 
+\end{DoxyReturn}
+\index{Dispatcher@{Dispatcher}!recalc\+Distance@{recalc\+Distance}}
+\index{recalc\+Distance@{recalc\+Distance}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{recalc\+Distance(int $\ast$dist)}{recalcDistance(int *dist)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dispatcher\+::recalc\+Distance (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{dist}
+\end{DoxyParamCaption}
+)}\hypertarget{class_dispatcher_ae676aefe97ae29d1437a7d83cb926492}{}\label{class_dispatcher_ae676aefe97ae29d1437a7d83cb926492}
+Метод, позволяющий перерассчитывать оставшийся путь, в соответствии с изменяющимися данными о полете 
+\begin{DoxyParams}{Аргументы}
+{\em dist} & пройденный путь \\
+\hline
+\end{DoxyParams}
+\index{Dispatcher@{Dispatcher}!recalc\+Flight\+Time@{recalc\+Flight\+Time}}
+\index{recalc\+Flight\+Time@{recalc\+Flight\+Time}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{recalc\+Flight\+Time(int $\ast$aver\+Speed)}{recalcFlightTime(int *averSpeed)}}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ int, int $>$ Dispatcher\+::recalc\+Flight\+Time (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{aver\+Speed}
+\end{DoxyParamCaption}
+)}\hypertarget{class_dispatcher_a7634fa3cbe643d23e029add4319df59d}{}\label{class_dispatcher_a7634fa3cbe643d23e029add4319df59d}
+Метод, позволяющий перерассчитывать время полета, в соответсвии с изменяющимися данными полета 
+\begin{DoxyParams}{Аргументы}
+{\em aver\+Speed} & средняя скорость \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+time рассчетное время прибытия 
+\end{DoxyReturn}
+\index{Dispatcher@{Dispatcher}!set\+Flight@{set\+Flight}}
+\index{set\+Flight@{set\+Flight}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{set\+Flight(\+Flight \+\_\+flight)}{setFlight(Flight _flight)}}]{\setlength{\rightskip}{0pt plus 5cm}void Dispatcher\+::set\+Flight (
+\begin{DoxyParamCaption}
+\item[{{\bf Flight}}]{\+\_\+flight}
+\end{DoxyParamCaption}
+)}\hypertarget{class_dispatcher_a68ff23b5fc803c57bf77edee96ff1cba}{}\label{class_dispatcher_a68ff23b5fc803c57bf77edee96ff1cba}
+Метод, инициализирующий данные полета 
+\begin{DoxyParams}{Аргументы}
+{\em \+\_\+flight} & данные полета \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Данные класса}
+\index{Dispatcher@{Dispatcher}!flight@{flight}}
+\index{flight@{flight}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{flight}{flight}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Flight} Dispatcher\+::flight\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_dispatcher_a8bc2b0350eb8323fc04d1af3c0c61585}{}\label{class_dispatcher_a8bc2b0350eb8323fc04d1af3c0c61585}
+
+
+Реальный полет самолета 
+
+\index{Dispatcher@{Dispatcher}!name@{name}}
+\index{name@{name}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Dispatcher\+::name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_dispatcher_aa0667608304c6859a6dea2f16d8b56e7}{}\label{class_dispatcher_aa0667608304c6859a6dea2f16d8b56e7}
+
+
+Имя диспетчера 
+
+\index{Dispatcher@{Dispatcher}!plan@{plan}}
+\index{plan@{plan}!Dispatcher@{Dispatcher}}
+\subsubsection[{\texorpdfstring{plan}{plan}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Plan\+Of\+Flight} Dispatcher\+::plan\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_dispatcher_acd061344a58a854e72c08712e9ef8b7e}{}\label{class_dispatcher_acd061344a58a854e72c08712e9ef8b7e}
+
+
+План полета самолета 
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_dispatcher_8hpp}{Dispatcher.\+hpp}\item 
+\hyperlink{_dispatcher_8cpp}{Dispatcher.\+cpp}\end{DoxyCompactItemize}
