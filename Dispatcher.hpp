@@ -4,7 +4,11 @@
 #include <utility>
 #include "Flight.hpp"
 #include "PlanOfFlight.hpp"
-
+/*!
+  @class Dispatcher
+  Класс, описывающий диспетчера. Содержит конструктор,-get и -set методы,
+  перегруженные операторы ввода/вывода.
+*/
 class Dispatcher{
 private:
     std::string name;
