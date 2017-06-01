@@ -24,6 +24,7 @@ public:
     int getDistance();
 
     //friend Point loadPoint(std::string _name);
+    Route &operator =(const Route &route);
 
     friend std::ostream& operator<< (std::ostream& out, Route& route);
     friend std::istream& operator>> (std::istream& in, Route& route);

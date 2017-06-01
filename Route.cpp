@@ -26,22 +26,32 @@ ostream& operator<< (ostream& out, Route& route)
 
 istream& operator>> (istream& in, Route& route)
 {
-    getline(in, route.name);
+    in >> route.name;
     in >> route.distance;
     int num;
     in >> num;
-    Point p;
+    vector<Point> vecIns(num);
     for(int i=0; i<num; i++) {
-        in >> p;
-        route.vecInsidePoint.push_back(p);
-        route.vecInsidePoint[i].defineSpecifier();
+        in >> vecIns[i];
     }
+    route.vecInsidePoint = vecIns;
     int ed;
     for(unsigned int i=0; i<route.vecInsidePoint.size()-1; i++) {
         in >> ed;
         route.edgeList.push_back(ed);
     }
     return in;
+}
+
+Route& Route::operator = (const Route &route)
+{
+    if (&route == this)
+        return *this;
+    this->name = route.name;
+    this->distance = route.distance;
+    this->vecInsidePoint = route.vecInsidePoint;
+    this->edgeList = route.edgeList;
+    return *this;
 }
 
 void Route::calcDistance()

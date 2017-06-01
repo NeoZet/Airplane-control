@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <unistd.h>
 #include "Dispatcher.hpp"
 #include "Flight.hpp"
 #include "PlanOfFlight.hpp"
@@ -160,12 +161,9 @@ void Dispatcher::correctFlight(int *dist, int *averSpeed)
         string numb;
         ofstream out;
         ifstream in;
-        //ostringstream ss;
-        //in.open((plan.getRoute().getName()+"_"+str+".log").c_str());
         for(int i=0;;i++){
             in.open((plan.getRoute().getName()+"_"+numb+".log").c_str());
             if(in) {
-                //qty++;
                 ostringstream ss;
                 ss<<i;
                 numb = ss.str();
@@ -174,8 +172,7 @@ void Dispatcher::correctFlight(int *dist, int *averSpeed)
             }
             else break;
         }
-        //ss<<qty;
-        //ss>>str;
+
         out.open((plan.getRoute().getName()+"_"+numb+".log").c_str());
         for(unsigned int i=0; i<vecFlight.size(); i++) {
             out << vecFlight[i] << endl;

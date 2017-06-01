@@ -20,9 +20,8 @@ int main()
 {
     Base base;
     base.run();
-    /*////////////////
->>>>>>> work
-    ifstream in("listPlane.txt");
+
+    /*ifstream in("listPlane.txt");
     ListOfPlane pl;
     Plane p;
     vector<Plane> listPl;
@@ -35,33 +34,38 @@ int main()
     pl.setPlane(listPl, listPl.size());
     in.close();
 
-    in.open("listRoute.txt");
+    in.open("Route.txt");
     ListOfRoute rt;
     Route r;
     vector<Route> listRt;
     qty=0;
     while(in >> r) {
         if(in.eof()) break;
+        r.generateVecEdge();
+        r.calcDistance();
         listRt.push_back(r);
         qty++;
     }
     rt.setRoute(listRt, listRt.size());
     in.close();
+    ofstream o("Route.txt");
+    for(unsigned int i=0; i<listRt.size(); i++) {
+        o << rt.getRoute()[i] << endl;
+    }
+    o.close();
 
-
-    in.open("listFlightPlan.txt");
+    in.open("Plan.txt");
     PlanOfFlight plan;
     in >> plan;
     plan.loadPlane(pl.getPlane());
     plan.loadRoute(rt.getRoute());
     plan.calcArriveTime();
     plan.calcFlightTime();
-    ofstream out("listFlightPlan.txt");
+    ofstream out("Plan.txt");
     out << plan << endl;
-    plan.distance = r.getDistance();
     in.close();
 
-    in.open("KBOS-KORD.log");
+    in.open("KDAL-KSFO.log");
     Dispatcher disp(plan);
     Flight flight;
     int *averSpeed;
@@ -88,7 +92,7 @@ int main()
         cout << vecPoint[i].getName()<<" ";
     }
     cout << endl;
-   */
+
 ////////////////////////*/
 
     /*

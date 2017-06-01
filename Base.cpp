@@ -1,11 +1,11 @@
 #include <iostream>
 #include <fstream>
-#include "Base.hpp"
 #include <utility>
 #include <string>
 #include <vector>
 #include <utility>
 #include <unistd.h>
+#include <cstdlib>
 #include "Point.hpp"
 #include "ListOfPoint.hpp"
 #include "Route.hpp"
@@ -134,145 +134,141 @@ PlanOfFlight Base::makePlanOfFlight(vector<Route> vecRt,vector<Plane> vecPlane)
 
 int Base::run()
 {
-    ifstream in("listPlane.txt");
-    ListOfPlane pl;
-    Plane p;
-    vector<Plane> listPl;
-    int qty=0;
-    while(in >> p) {
-        if(in.eof()) break;
-        listPl.push_back(p);
-        qty++;
-    }
-    pl.setPlane(listPl, listPl.size());
-    in.close();
-
-    in.open("listPoint.txt");
-    ListOfPoint poi;
-    Point point;
-    vector<Point> listPt;
-    qty=0;
-    while(in >> point) {
-        if(in.eof()) break;
-        listPt.push_back(point);
-        qty++;
-    }
-    poi.setVecPoint(listPt, listPt.size());
-    in.close();
-
-    in.open("listRoute.txt");
-    ListOfRoute rt;
-    Route r;
-    vector<Route> listRt;
-    qty=0;
-    while(in >> r) {
-        if(in.eof()) break;
-        listRt.push_back(r);
-        qty++;
-    }
-    rt.setRoute(listRt, listRt.size());
-    in.close();
-
-    cout << "Airplane control (version 1.0)" << endl;
-    cout << "Выберите действие: "  <<endl;
-    cout << "-Задать полет [1]" <<endl;
-    cout << "-Создать маршрут [2]"<<endl;
-    cout << "-Добавить самолет [3]"<<endl;
-    cout << "-Удалить маршрут [4]" <<endl;
-    cout << "-Удалить самолет [5]" <<endl;
-    cout << "Выход [0]"<<endl;
-    cout << "Ввод: ";
-    int key;
-    cin >> key;
-    switch(key) {
-    case 1:
-    {
-        int keyRt;
-        cout <<endl<< "Выберите маршрут:"<<endl;
-        for(unsigned int i=0; i<rt.getRoute().size(); i++) {
-            cout <<rt.getRoute()[i].getName()<<" ["<<i+1<<"]"<<endl;
-        }
+    ListOfPlane listPl;
+    ListOfPoint listPt;
+    ListOfRoute listRt;
+    LoadData(listPl, listRt, listPt);
+    while(1) {
+        system ("clear");
+        cout << "***Airplane control***" << endl;
+        cout << "Выберите действие: "  <<endl;
+        cout << "-Задать полет [1]" <<endl;
+        cout << "-Создать маршрут [2]"<<endl;
+        cout << "-Добавить самолет [3]"<<endl;
+        cout << "-Удалить маршрут [4]" <<endl;
+        cout << "-Удалить самолет [5]" <<endl;
+        cout << "Выход [0]"<<endl;
         cout << "Ввод: ";
-        cin >> keyRt;
-        int keyPl;
-        cout << endl<<"Выберите самолет:"<<endl;
-        for(unsigned int i=0; i<pl.getPlane().size(); i++) {
-            cout <<pl.getPlane()[i].getName()<<" ["<<i+1<<"]"<<endl;
-        }
-        cout << "Ввод: ";
-        cin >> keyPl;
-        int keyTypeCom;
-        PlanOfFlight plan;
-        cout << endl<<"Выберите способ передачи данных:"<<endl;
-        cout << "Автоматический [1]"<<endl;
-        cout << "Ручной [2]"<<endl;
-        cout << "Ввод: ";
-        cin>>keyTypeCom;
-        cout << endl;
-        if(keyTypeCom == 1)
-            plan.setTypeCommunicate('A');
-        else if(keyTypeCom == 2)
-            plan.setTypeCommunicate('M');
-        in.open("listFlightPlan.txt");
-        in >> plan;
-        plan.loadPlane(pl.getPlane());
-        plan.loadRoute(rt.getRoute());
-        plan.calcArriveTime();
-        plan.calcFlightTime();
-        /*ofstream out("listFlightPlan.txt");
-            out << plan << endl;*/
-        in.close();
-        string logFileName = plan.getRoute().getName()+".log";
-        in.open(logFileName.c_str());
-        Dispatcher disp(plan);
-        Flight flight;
-        int *averSpeed;
-        int d = r.getDistance();
-        int *dist = &d;
-        int aSpeed=0;
-        qty=0;
-        int allSpeed=0;
-        if(keyTypeCom == 1) {
-            while(in >> flight) {
-                if(in.eof()) break;
-                qty++;
-                allSpeed+=flight.getSpeed();
-                aSpeed = (allSpeed/qty);
-                averSpeed = &aSpeed;
+        int key;
+        cin >> key;
+        switch(key) {
+        case 1:
+        {
+            int keyRt;
+            cout <<endl<< "Выберите маршрут:"<<endl;
+            for(unsigned int i=0; i<listRt.getRoute().size(); i++) {
+                cout <<"-"<<listRt.getRoute()[i].getName()<<" ["<<i+1<<"]"<<endl;
+            }
+            cout << "Ввод: ";
+            cin >> keyRt;
+            int keyPl;
+            cout << endl<<"Выберите самолет:"<<endl;
+            for(unsigned int i=0; i<listPl.getPlane().size(); i++) {
+                cout <<"-"<<listPl.getPlane()[i].getName()<<" ["<<i+1<<"]"<<endl;
+            }
+            cout << "Ввод: ";
+            cin >> keyPl;
+            int keyTypeCom;
+            PlanOfFlight plan;
+            cout << endl<<"Выберите способ передачи данных:"<<endl;
+            cout << "-Автоматический [1]"<<endl;
+            cout << "-Ручной [2]"<<endl;
+            cout << "Ввод: ";
+            cin>>keyTypeCom;
+            cout << endl;
+            if(keyTypeCom == 1)
+                plan.setTypeCommunicate('A');
+            else if(keyTypeCom == 2)
+                plan.setTypeCommunicate('M');
+            ifstream in("listFlightPlan.txt");
+            int var=0;
+            while(var != keyRt) {
+                in >> plan;
+                var++;
+            }
+            plan.loadPlane(listPl.getPlane());
+            plan.loadRoute(listRt.getRoute());
+            plan.calcArriveTime();
+            plan.calcFlightTime();
+            in.close();
+
+            string logFileName = plan.getRoute().getName()+".log";
+            in.open(logFileName.c_str());
+            Dispatcher disp(plan);
+            Flight flight;
+            int *averSpeed;
+            int d = listRt.getRoute()[keyRt-1].getDistance();
+            int *dist = &d;
+            int aSpeed=0;
+            int qty=0;
+            int allSpeed=0;
+            if(keyTypeCom == 1) {
+                while(in >> flight) {
+                    if(in.eof()) break;
+                    qty++;
+                    allSpeed+=flight.getSpeed();
+                    aSpeed = (allSpeed/qty);
+                    averSpeed = &aSpeed;
+                    disp.setFlight(flight);
+                    disp.correctFlight(dist, averSpeed);
+                    //usleep(500000);
+                }
+            }
+            else if(keyTypeCom == 2) {
                 disp.setFlight(flight);
                 disp.correctFlight(dist, averSpeed);
-                //usleep(500000);
             }
+            cout << "Посадка..."<<endl;
+            usleep(2000000);
+            pair<int, int> time = disp.recalcFlightTime(averSpeed);
+            vector<Point> vecPoint = listRt.getRoute()[keyRt-1].getInsidePoint();
+            qty = vecPoint.size();
+            cout << plan.getRoute().getInsidePoint().size() << endl;
+            cout <<"Время: "<<time.first<<":"<<time.second<<endl;
+            cout << "Скорость: 0 км/ч"<<endl;
+            cout << "Высота: 0 м" << endl;
+            cout << "Оставшийся путь: 0 км"<<endl;
+            cout << endl;
+            cout << "Маршрут: " << listRt.getRoute()[keyRt-1].getName()<<endl;
+            for(unsigned int i=0; i<vecPoint.size(); i++) {
+                cout << vecPoint[i].getName()<<" ";
+            }
+            cout << endl;
+            cout << "Для продолжения нажмите Enter"<<endl;
+            getchar();
+            getchar();
+            break;
         }
-        else if(keyTypeCom == 2) {
-            disp.setFlight(flight);
-            disp.correctFlight(dist, averSpeed);
+        case 2:
+            listRt.append(listPt.getVecPoint());
+            SaveData(listPl, listRt, listPt);
+            cout << "Для продолжения нажмите Enter"<<endl;
+            getchar();
+            getchar();
+            break;
+        case 3:
+            listPl.append();
+            SaveData(listPl, listRt, listPt);
+            cout << "Для продолжения нажмите Enter"<<endl;
+            getchar();
+            getchar();
+            break;
+        case 4:
+            listRt.remove();
+            SaveData(listPl, listRt, listPt);
+            cout << "Для продолжения нажмите Enter"<<endl;
+            getchar();
+            getchar();
+            break;
+        case 5:
+            listPl.remove();
+            SaveData(listPl, listRt, listPt);
+            cout << "Для продолжения нажмите Enter"<<endl;
+            getchar();
+            break;
+        case 0:
+            return 0;
         }
-        cout << "Посадка...";
-        //sleep(1);
-        cout << endl;
-        vector<Point> vecPoint = plan.getRoute().getInsidePoint();
-        cout << "Маршрут: " << plan.getRoute().getName()<<endl;
-        for(unsigned int i=0; i<vecPoint.size(); i++) {
-            cout << vecPoint[i].getName()<<" ";
-        }
-        cout << endl;
-        break;
-    }
-    case 2:
-        rt.append(listPt);
-        break;
-    case 3:
-        pl.append();
-        break;
-    case 4:
-        rt.remove();
-        break;
-    case 5:
-        pl.remove();
-        break;
-    case 0:
-        return 0;
     }
 
 }
