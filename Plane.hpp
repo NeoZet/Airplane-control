@@ -2,9 +2,12 @@
 
 #include <string>
 #include <fstream>
-/*! @class  Plane
+
+/*!
+ * \file
+ * @class  Plane
     Класс,описывающий самолёты.Содержит конструкторы,-get и -set методы,
-  перегруженные операторы ввода/вывод и присваивания. 
+  перегруженные операторы ввода/вывода, присваивания.
 */
 class Plane{
 private:
@@ -22,7 +25,7 @@ public:
 	*/
     Plane();
 	/*!
-		Конструктор,инициализирующий объект класса
+        Конструктор,инициализирующий атрибуты класса
 	*/
     Plane(std::string _name,int _topSpeed,int _topAltitude,int _topDistance)
         : name(_name), topSpeed(_topSpeed), topAltitude(_topAltitude), topDistance(_topDistance) {}
@@ -59,7 +62,7 @@ public:
 	*/
     Plane operator = (const Plane &plane);
 	/*!
-		Перегруженный оператор вывода для класса Plane
+        Перегруженный оператор вывода данных для класса Plane
 		\param [out] &out Ссылка на поток вывода
 		\param [in] &plane	Ссылка на класс Plane
 	*/

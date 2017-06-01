@@ -3,6 +3,7 @@
 #include <vector>
 #include "Point.hpp"
 /*!
+  \file
   @class ListOfPoint
   Класс,предназначенный для хранения списка точек Содержит -get и -set методы,
   а также методы добавления и удалнения точек 

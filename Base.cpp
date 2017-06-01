@@ -211,7 +211,7 @@ int Base::run()
                     averSpeed = &aSpeed;
                     disp.setFlight(flight);
                     disp.correctFlight(dist, averSpeed);
-                    //usleep(500000);
+                    usleep(500000);
                 }
             }
             else if(keyTypeCom == 2) {

@@ -5,6 +5,7 @@
 #include <fstream>
 
 /*!
+    \file
   @class Point
   Класс, описывающий точки. Содержит конструкторы,-get и -set методы,
   перегруженные операторы ввода/вывода.
@@ -58,11 +59,13 @@ public:
    std::string getSpecifier();
 
    /*!
+        Перегруженный оператор для вывода данных
 		\param [out] &out Ссылка на поток вывода
      	\param [in] &point Ссылка на класс Point
 	*/
    friend std::ostream& operator<< (std::ostream& out, Point& point);
 	/*!
+        Перегруженный оператор для ввода данных
 		\param [in] &in Ссылка на поток ввода
       	\param [out] &point Ссылка на класс Point
 	*/

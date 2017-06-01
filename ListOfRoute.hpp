@@ -4,6 +4,7 @@
 #include "Route.hpp"
 
 /*!
+  \file
   @class ListOfRoute
   Класс,предназначенный для хранения списка маршрутов. Содержит -get и -set методы,
   а также методы добавления и удалнения маршрутов
@@ -28,7 +29,7 @@ public:
 	  */
       void remove();
 	  /*!
-		Метод,предназначенный для загрузки точек маршрута
+        Метод,предназначенный для загрузки точек маршрута по их названиям
 		\param [in] vecInsPt вектор точек,из которых состоит маршрут
 		\param [out] vecAllPoint вектор всех точек
 		\return vecInsPt
@@ -39,7 +40,6 @@ public:
 		\param [in] _vecRoute вектор маршрутов
 		\param [in] numb количество маршрутов
 	  */
-
        void setRoute(std::vector<Route> _vecRoute, unsigned int numb);
 	   /*!
 			Метод,возвращающий вектор маршрутов

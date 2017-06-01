@@ -4,6 +4,7 @@
 #include "ListOfPlane.hpp"
 #include "Plane.hpp"
 /*!
+  \file
   @class ListOfPlane
   Класс,преназначенный для хранения списка самолётов. Содержит -get и -set методы,
   а также методы добавления и удаления самолётов.
